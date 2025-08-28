@@ -115,6 +115,19 @@ body {
     border-bottom: 1px solid rgba(255, 141, 199, 0.15);
 }
 
+/* Mobile-specific solid background */
+@media (max-width: 768px) {
+    .navbar-cute {
+        background: rgba(35, 32, 63, 0.98) !important;
+        backdrop-filter: none !important;
+    }
+
+    /* Ensure mobile menu has proper spacing */
+    .navbar-cute .container {
+        padding: 0.5rem 0;
+    }
+}
+
 /* Enhanced styling for navigation links */
 .navbar-cute ul li a {
     position: relative; /* For the pseudo-element underline */
