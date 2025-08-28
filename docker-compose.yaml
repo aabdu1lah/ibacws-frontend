@@ -4,6 +4,7 @@ services:
     build:
       context: .   # current directory (where Dockerfile is)
       dockerfile: Dockerfile
+    image: ibacws-frontend
     ports:
       - "2026:80"  # host:container
     restart: always
