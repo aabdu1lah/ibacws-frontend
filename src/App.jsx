@@ -140,43 +140,43 @@ const App = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Event Card 1 */}
                     <div className="card-cute overflow-hidden">
-                        <img src="https://placehold.co/600x400/2a1a3e/ffb1df?text=Food+Drive" alt="Food Drive" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/2a1a3e/ffb1df?text=Fallback"; }} />
+                        <img src="/assets/blood_drive.webp" alt="Blood Drive" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="/assets/blood_drive.jpeg"; }} />
                         <div className="p-6">
-                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Community Food Drive</h3>
+                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Blood Drive</h3>
                             <p className="text-c9c9d5 mb-4">
-                                Collected and distributed food packages to over 200 families in need.
+                                167 donors, 501 lives saved — doubling our impact through stronger outreach.
                             </p>
                             <div className="flex items-center text-b0b0bb">
                                 <CalendarDays className="w-4 h-4 mr-2 text-pink-400" />
-                                <span>October 2024</span>
+                                <span>November 2024</span>
                             </div>
                         </div>
                     </div>
                     {/* Event Card 2 */}
                     <div className="card-cute overflow-hidden">
-                        <img src="https://placehold.co/600x400/1a2e3a/a9e0ff?text=Clean-up+Drive" alt="Clean-up Drive" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/1a2e3a/a9e0ff?text=Fallback"; }} />
+                        <img src="/assets/medical_camp.webp" alt="Medical Camp" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="/assets/medical_camp.png"; }} />
                         <div className="p-6">
-                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Campus Clean-up Drive</h3>
+                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Medical Camp</h3>
                             <p className="text-c9c9d5 mb-4">
-                                Mobilized volunteers to clean and beautify our university campus grounds.
+                                500+ patients treated in rural Sindh, bridging critical healthcare access gaps.
                             </p>
                             <div className="flex items-center text-b0b0bb">
                                 <CalendarDays className="w-4 h-4 mr-2 text-cyan-400" />
-                                <span>September 2024</span>
+                                <span>December 2024</span>
                             </div>
                         </div>
                     </div>
                     {/* Event Card 3 */}
                     <div className="card-cute overflow-hidden">
-                        <img src="https://placehold.co/600x400/3a2e1a/f7e6af?text=Mentorship+Program" alt="Mentorship Program" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/3a2e1a/f7e6af?text=Fallback"; }} />
+                        <img src="/assets/mkm.webp" alt="Mentorship Program" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="/assets/mkm.jpeg"; }} />
                         <div className="p-6">
-                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Youth Mentorship Program</h3>
+                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Muskrahaton Ka Mela</h3>
                             <p className="text-c9c9d5 mb-4">
-                                Paired university students with local high school students for academic mentorship.
+                                500+ patients treated in rural Sindh, bridging critical healthcare access gaps.
                             </p>
                             <div className="flex items-center text-b0b0bb">
                                 <CalendarDays className="w-4 h-4 mr-2 text-yellow-400" />
-                                <span>August 2024</span>
+                                <span>March 2025</span>
                             </div>
                         </div>
                     </div>
