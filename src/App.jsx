@@ -576,6 +576,8 @@ const App = () => {
                         className="footer-cute text-b0b0bb py-8 text-center shadow-inner"> {/* Applied custom footer style and text color */}
                         <div className="container mx-auto px-6">
                             <p>&copy; {new Date().getFullYear()} IBA Community Welfare Society. All rights reserved.</p>
+                            <p className="mt-2 text-sm">Made with <span role="img" aria-label="heart">❤️</span> by
+                                Hyveron</p>
                         </div>
                     </footer>
                 </div>
