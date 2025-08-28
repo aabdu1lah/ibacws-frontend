@@ -117,7 +117,7 @@ const App = () => {
     );
 
     const goalsSection = (
-        <section id="goals" className="section-padding bg-cute-gradient"> {/* Changed: Added bg-cute-gradient */}
+        <section id="goals" className="section-padding"> {/* Changed: Added bg-cute-gradient */}
             <div className="container mx-auto px-6 text-center">
                 <h2 className="heading-cute mb-6 animate-fadeIn text-2xl md:text-3xl">Our Goals &
                     Agenda</h2> {/* Responsive text size */}
@@ -153,7 +153,7 @@ const App = () => {
     );
 
     const pastEventsSection = (
-        <section id="past-events" className="section-padding">
+        <section id="past-events" className="section-padding bg-cute-gradient">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="heading-cute mb-6 animate-fadeIn text-2xl md:text-3xl">Our Past Events</h2>
                 <p className="subheading-cute mb-12 max-w-2xl mx-auto text-base md:text-lg">
