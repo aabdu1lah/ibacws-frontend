@@ -1,0 +1,9 @@
+services:
+  frontend:
+    container_name: ibacws-frontend
+    build:
+      context: .   # current directory (where Dockerfile is)
+      dockerfile: Dockerfile
+    ports:
+      - "2026:80"  # host:container
+    restart: always
