@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ---------- Global Styles (Cute Dark Theme with Accent Colors) ---------- */
+body {
+    font-family: 'Quicksand', 'Inter', sans-serif;
+    background: #1a1a2e; /* Deep, muted indigo-like tone */
+    color: #e0e0e8; /* Soft off-white for primary text */
+    line-height: 1.6;
+}
+
+/* Soft background gradient for sections/hero (adjusted for dark mode with accents) */
+.bg-cute-gradient {
+    /* Using darker versions of logo colors for background depth */
+    background: linear-gradient(135deg, #2a1a3e, #1a2e3a, #3a2e1a); /* Dark purple, dark teal, dark gold */
+}
+
+/* Card styling (lighter element on dark background, no white) */
+.card-cute {
+    background: #23203f; /* Slightly lighter, muted dark purple-blue for cards */
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Subtle border in a muted cyan */
+    border: 1px solid rgba(138, 217, 255, 0.1); /* Muted cyan accent */
+}
+.card-cute:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* Button styling (accented for dark mode with logo colors) */
+.btn-cute {
+    @apply px-5 py-2 rounded-full font-semibold;
+    /* Vibrant gradient using logo's pink and cyan */
+    background: linear-gradient(135deg, #ff8dc7, #8ad9ff); /* Pink to soft blue/cyan */
+    color: #1a1a2e; /* Dark text on light button */
+    transition: all 0.3s ease;
+}
+.btn-cute:hover {
+    background: linear-gradient(135deg, #ff70bb, #6cc7ff);
+    transform: scale(1.05);
+}
+
+/* Section padding (no change needed here) */
+.section-padding {
+    @apply py-16 px-6 md:px-12;
+}
+
+/* Typography helpers */
+.heading-cute {
+    @apply text-3xl md:text-4xl font-extrabold;
+    color: #f0f0f8; /* Very light, almost white for headings */
+}
+.subheading-cute {
+    @apply text-lg md:text-xl font-medium;
+    color: #c9c9d5; /* Slightly darker light text for contrast with heading */
+}
+
+/* ---------- Animations (Keyframes remain the same) ---------- */
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out;
+}
+.animate-slideInFromTop {
+    animation: slideInFromTop 0.8s ease-out;
+}
+.animate-slideInFromBottom {
+    animation: slideInFromBottom 0.8s ease-out;
+}
+.animate-blob {
+    animation: blob 7s infinite;
+}
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideInFromTop {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInFromBottom {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes blob {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* ---------- Extras for Cute Dark Theme ---------- */
+.navbar-cute {
+    backdrop-filter: blur(10px);
+    /* Darker, semi-transparent background with a hint of purple */
+    background: rgba(35, 32, 63, 0.9); /* Darker than cards, slightly transparent */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* Accent border at the bottom using a soft pink */
+    border-bottom: 1px solid rgba(255, 141, 199, 0.15); /* Muted pink accent */
+}
+
+.footer-cute {
+    background: #1f1f3a; /* Darker footer background */
+    /* Accent border at the top using a soft green */
+    border-top: 1px solid rgba(113, 201, 206, 0.15); /* Muted green accent */
+    color: #b0b0bb; /* Muted light text */
+}
+
+.badge-cute {
+    /* Background in a softer yellow tone */
+    background: #4a3e2a; /* Dark muted gold/yellow background */
+    color: #f7e6af; /* Lighter yellow for text */
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+}
