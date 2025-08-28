@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Instagram, Linkedin, ChevronRight, UserRoundCog, CalendarDays, Rocket, Users, Target, BookUser } from 'lucide-react'; // Using lucide-react for icons
+import { Mail, ChevronRight, UserRoundCog, CalendarDays, Rocket, Users, Target, BookUser } from 'lucide-react'; // Using lucide-react for icons
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
 
 // Main App Component
 const App = () => {
@@ -45,7 +46,7 @@ const App = () => {
     };
 
     const departmentsSection = (
-        <section id="departments" className="section-padding bg-cute-gradient">
+        <section id="departments" className="section-padding"> {/* Removed bg-cute-gradient */}
             <div className="container mx-auto px-6 text-center">
                 <h2 className="heading-cute mb-6 animate-fadeIn">Our Departments</h2>
                 <p className="subheading-cute mb-12 max-w-2xl mx-auto">
@@ -55,10 +56,10 @@ const App = () => {
                     {departments.map((dept, index) => (
                         <div
                             key={index}
-                            className="card-cute p-8" // Added p-8 as a default
+                            className="card-cute p-8"
                         >
-                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">{dept.name}</h3> {/* Adjusted text color */}
-                            <p className="text-c9c9d5">{dept.description}</p> {/* Adjusted text color */}
+                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">{dept.name}</h3>
+                            <p className="text-c9c9d5">{dept.description}</p>
                         </div>
                     ))}
                 </div>
@@ -130,7 +131,7 @@ const App = () => {
     );
 
     const pastEventsSection = (
-        <section id="past-events" className="section-padding"> {/* No specific custom background class, will inherit body background */}
+        <section id="past-events" className="section-padding bg-cute-gradient"> {/* Added bg-cute-gradient */}
             <div className="container mx-auto px-6 text-center">
                 <h2 className="heading-cute mb-6 animate-fadeIn">Our Past Events</h2>
                 <p className="subheading-cute mb-12 max-w-2xl mx-auto">
@@ -138,43 +139,43 @@ const App = () => {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Event Card 1 */}
-                    <div className="card-cute overflow-hidden"> {/* Applied custom card style */}
+                    <div className="card-cute overflow-hidden">
                         <img src="https://placehold.co/600x400/2a1a3e/ffb1df?text=Food+Drive" alt="Food Drive" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/2a1a3e/ffb1df?text=Fallback"; }} />
                         <div className="p-6">
-                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Community Food Drive</h3> {/* Adjusted text color */}
-                            <p className="text-c9c9d5 mb-4"> {/* Adjusted text color */}
+                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Community Food Drive</h3>
+                            <p className="text-c9c9d5 mb-4">
                                 Collected and distributed food packages to over 200 families in need.
                             </p>
-                            <div className="flex items-center text-b0b0bb"> {/* Adjusted text color */}
-                                <CalendarDays className="w-4 h-4 mr-2 text-pink-400" /> {/* Accent color for icon */}
+                            <div className="flex items-center text-b0b0bb">
+                                <CalendarDays className="w-4 h-4 mr-2 text-pink-400" />
                                 <span>October 2024</span>
                             </div>
                         </div>
                     </div>
                     {/* Event Card 2 */}
-                    <div className="card-cute overflow-hidden"> {/* Applied custom card style */}
+                    <div className="card-cute overflow-hidden">
                         <img src="https://placehold.co/600x400/1a2e3a/a9e0ff?text=Clean-up+Drive" alt="Clean-up Drive" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/1a2e3a/a9e0ff?text=Fallback"; }} />
                         <div className="p-6">
-                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Campus Clean-up Drive</h3> {/* Adjusted text color */}
-                            <p className="text-c9c9d5 mb-4"> {/* Adjusted text color */}
+                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Campus Clean-up Drive</h3>
+                            <p className="text-c9c9d5 mb-4">
                                 Mobilized volunteers to clean and beautify our university campus grounds.
                             </p>
-                            <div className="flex items-center text-b0b0bb"> {/* Adjusted text color */}
-                                <CalendarDays className="w-4 h-4 mr-2 text-cyan-400" /> {/* Accent color for icon */}
+                            <div className="flex items-center text-b0b0bb">
+                                <CalendarDays className="w-4 h-4 mr-2 text-cyan-400" />
                                 <span>September 2024</span>
                             </div>
                         </div>
                     </div>
                     {/* Event Card 3 */}
-                    <div className="card-cute overflow-hidden"> {/* Applied custom card style */}
+                    <div className="card-cute overflow-hidden">
                         <img src="https://placehold.co/600x400/3a2e1a/f7e6af?text=Mentorship+Program" alt="Mentorship Program" className="w-full h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/3a2e1a/f7e6af?text=Fallback"; }} />
                         <div className="p-6">
-                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Youth Mentorship Program</h3> {/* Adjusted text color */}
-                            <p className="text-c9c9d5 mb-4"> {/* Adjusted text color */}
+                            <h3 className="text-xl font-semibold text-f0f0f8 mb-2">Youth Mentorship Program</h3>
+                            <p className="text-c9c9d5 mb-4">
                                 Paired university students with local high school students for academic mentorship.
                             </p>
-                            <div className="flex items-center text-b0b0bb"> {/* Adjusted text color */}
-                                <CalendarDays className="w-4 h-4 mr-2 text-yellow-400" /> {/* Accent color for icon */}
+                            <div className="flex items-center text-b0b0bb">
+                                <CalendarDays className="w-4 h-4 mr-2 text-yellow-400" />
                                 <span>August 2024</span>
                             </div>
                         </div>
@@ -236,7 +237,7 @@ const App = () => {
                         rel="noopener noreferrer"
                         className="flex items-center text-e0e0e8 hover:text-ffb1df transition-colors duration-300 text-lg group" // Adjusted link color and hover accent
                     >
-                        <Instagram className="w-8 h-8 mr-3 group-hover:scale-110 transform transition-transform duration-200 text-pink-400" /> {/* Accent color for icon */}
+                        <FaInstagram className="w-8 h-8 mr-3 group-hover:scale-110 transform transition-transform duration-200 text-pink-400" /> {/* Accent color for icon */}
                         <span>@ibacws</span>
                     </a>
                     <a
@@ -245,7 +246,7 @@ const App = () => {
                         rel="noopener noreferrer"
                         className="flex items-center text-e0e0e8 hover:text-ffb1df transition-colors duration-300 text-lg group" // Adjusted link color and hover accent
                     >
-                        <Linkedin className="w-8 h-8 mr-3 group-hover:scale-110 transform transition-transform duration-200 text-yellow-400" /> {/* Accent color for icon */}
+                        <FaLinkedin className="w-8 h-8 mr-3 group-hover:scale-110 transform transition-transform duration-200 text-yellow-400" /> {/* Accent color for icon */}
                         <span>@ibacws</span>
                     </a>
                 </div>
@@ -421,48 +422,73 @@ const App = () => {
         <div className="font-inter antialiased text-e0e0e8 bg-1a1a2e"> {/* Applied global text/background colors from body */}
             {currentPage === 'home' ? (
                 <div className="flex flex-col min-h-screen">
-                    <header className="navbar-cute text-e0e0e8 p-4 fixed w-full z-20"> {/* Applied custom navbar style and text color */}
+                    <header className="navbar-cute text-e0e0e8 py-2 px-4 fixed w-full z-20">
                         <nav className="container mx-auto flex justify-between items-center">
+                            {/* Logo + Title */}
                             <div className="flex items-center space-x-2">
-                                <img src="/assets/favicon.svg" alt="IBA Community Welfare Society Logo"
-                                     className="h-16 w-auto invert dark:filter-none"/>
-                                <span className="text-2xl font-bold text-f0f0f8">IBA Community Welfare Society</span> {/* Adjusted text color */}
+                                <img
+                                    src="/assets/favicon.svg"
+                                    alt="IBA Community Welfare Society Logo"
+                                    className="h-8 w-auto invert dark:filter-none"
+                                />
+                                <span className="text-lg font-semibold text-f0f0f8">
+        IBA Community Welfare Society
+      </span>
                             </div>
-                            <ul className="hidden md:flex space-x-6">
-                                <li><a href="#goals"
-                                       className="hover:text-ffb1df transition-colors duration-200">Goals</a></li> {/* Accent hover color */}
-                                <li><a href="#past-events"
-                                       className="hover:text-ffb1df transition-colors duration-200">Events</a></li> {/* Accent hover color */}
-                                <li><a href="#departments"
-                                       className="hover:text-ffb1df transition-colors duration-200">Departments</a>
-                                </li> {/* Accent hover color */}
-                                <li><a href="#why-join-us"
-                                       className="hover:text-ffb1df transition-colors duration-200">Why Join Us</a>
-                                </li> {/* Accent hover color */}
-                                <li><a href="#contact"
-                                       className="hover:text-ffb1df transition-colors duration-200">Contact</a>
-                                </li> {/* Accent hover color */}
+
+                            {/* Desktop Links */}
+                            <ul className="hidden md:flex items-center space-x-5">
+                                <li>
+                                    <a href="#goals" className="text-base hover:text-ffb1df transition-colors">
+                                        Goals
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#past-events" className="text-base hover:text-ffb1df transition-colors">
+                                        Events
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#departments" className="text-base hover:text-ffb1df transition-colors">
+                                        Departments
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#why-join-us" className="text-base hover:text-ffb1df transition-colors">
+                                        Why Join Us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contact" className="text-base hover:text-ffb1df transition-colors">
+                                        Contact
+                                    </a>
+                                </li>
                                 <li>
                                     <button
-                                        onClick={() => setCurrentPage('signup')}
-                                        className="btn-cute py-2 px-4 shadow-md" // Applied custom button style
+                                        onClick={() => setCurrentPage("signup")}
+                                        className="btn-cute py-1.5 px-3"
                                     >
                                         EC Sign-up
                                     </button>
                                 </li>
                             </ul>
+
                             {/* Mobile Menu Button */}
                             <div className="md:hidden">
-                                <button className="text-e0e0e8 focus:outline-none"> {/* Adjusted text color */}
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                              d="M4 6h16M4 12h16M4 18h16"></path>
+                                <button className="text-e0e0e8 focus:outline-none">
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
                                     </svg>
                                 </button>
                             </div>
                         </nav>
                     </header>
+
 
                     <main className="flex-grow pt-16"> {/* Add padding-top equal to header height */}
                         {heroSection}
@@ -473,7 +499,8 @@ const App = () => {
                         {contactSection}
                     </main>
 
-                    <footer className="footer-cute text-b0b0bb py-8 text-center shadow-inner"> {/* Applied custom footer style and text color */}
+                    <footer
+                        className="footer-cute text-b0b0bb py-8 text-center shadow-inner"> {/* Applied custom footer style and text color */}
                         <div className="container mx-auto px-6">
                             <p>&copy; {new Date().getFullYear()} IBA Community Welfare Society. All rights reserved.</p>
                         </div>
