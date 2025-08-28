@@ -25,7 +25,7 @@ const App = () => {
         },
         {
             question: "Who is eligible to apply?",
-            answer: "All currently enrolled university students with a passion for community service and leadership are encouraged to apply. Specific requirements may vary by department, but enthusiasm and commitment are key!"
+            answer: "All currently enrolled university students with a passion for community service and leadership are encouraged to apply, however according to the IBA guidelines, only Sophomore and Junior year students are eligible for the Executive Council positions!"
         },
         {
             question: "What is the application process?",
@@ -284,9 +284,9 @@ const App = () => {
                             Applications are now open for various departmental roles. Please review the FAQs below for more information on eligibility, the application process, and what to expect. We encourage all interested students to apply!
                         </p>
                         <ul className="list-disc list-inside text-c9c9d5 mt-4 space-y-2"> {/* Adjusted text color */}
-                            <li><strong>Application Deadline:</strong> <span className="text-ffb1df">September 15, 2025</span></li> {/* Accent color */}
-                            <li><strong>Interview Period:</strong> <span className="text-a9e0ff">September 20 - September 25, 2025</span></li> {/* Accent color */}
-                            <li><strong>Announcement of Results:</strong> <span className="text-f7e6af">September 30, 2025</span></li> {/* Accent color */}
+                            <li><strong>Application Deadline:</strong> <span className="text-ffb1df">August 31, 2025</span></li> {/* Accent color */}
+                            <li><strong>Interview Period:</strong> <span className="text-a9e0ff">September 1 - September 2, 2025</span></li> {/* Accent color */}
+                            <li><strong>Announcement of Results:</strong> <span className="text-f7e6af">September 4, 2025</span></li> {/* Accent color */}
                         </ul>
                     </div>
                 </div>
@@ -323,92 +323,165 @@ const App = () => {
                     </h2>
                     <form className="space-y-6 card-cute p-8 shadow-md"> {/* Applied custom card style */}
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted text color */}
+                            <label htmlFor="fullName" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted htmlFor */}
                                 Full Name
                             </label>
                             <input
                                 type="text"
-                                id="name"
-                                name="name"
-                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8" // Adjusted input styles for dark theme
+                                id="fullName"
+                                name="fullName"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
                                 placeholder="John Doe"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted text color */}
+                            <label htmlFor="universityEmail" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted htmlFor */}
                                 University Email
                             </label>
                             <input
                                 type="email"
-                                id="email"
-                                name="email"
-                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8" // Adjusted input styles for dark theme
-                                placeholder="cws@khi.iba.edu.pk"
+                                id="universityEmail"
+                                name="universityEmail"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
+                                placeholder="yourname@khi.iba.edu.pk"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="studentId" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted text color */}
-                                Student ID
+                            <label htmlFor="erp" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                ERP
                             </label>
                             <input
                                 type="text"
-                                id="studentId"
-                                name="studentId"
-                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8" // Adjusted input styles for dark theme
-                                placeholder="e.g., U1234567"
+                                id="erp"
+                                name="erp"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
+                                placeholder="e.g., 30XXX"
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="departmentPreference" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted text color */}
-                                Department Preference (1st Choice)
+                            <label htmlFor="whatsappNumber" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                Whatsapp Number
+                            </label>
+                            <input
+                                type="tel"
+                                id="whatsappNumber"
+                                name="whatsappNumber"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
+                                placeholder="e.g., 923XX-XXXXXXX"
+                                pattern="^\+?\d{1,3}?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$" // Basic pattern for phone numbers
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="program" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                Program
                             </label>
                             <select
-                                id="departmentPreference"
-                                name="departmentPreference"
-                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8" // Adjusted select styles for dark theme
+                                id="program"
+                                name="program"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
                                 required
                             >
-                                <option value="">Select a Department</option>
-                                {departments.map((dept, index) => (
-                                    <option key={index} value={dept.name}>{dept.name}</option>
-                                ))}
+                                <option value="">Select your program</option>
+                                <option value="BBA">BBA</option>
+                                <option value="ACF">ACF</option>
+                                <option value="CS">CS</option>
+                                <option value="SS">SS</option>
+                                <option value="Math">Math</option>
+                                <option value="Econ">Econ</option>
+                                <option value="Eco Math">Eco Math</option>
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="departmentPreference2" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted text color */}
-                                Department Preference (2nd Choice, optional)
+                            <label htmlFor="batch" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                Batch
                             </label>
                             <select
-                                id="departmentPreference2"
-                                name="departmentPreference2"
-                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8" // Adjusted select styles for dark theme
+                                id="batch"
+                                name="batch"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
+                                required
                             >
-                                <option value="">Select a Department</option>
-                                {departments.map((dept, index) => (
-                                    <option key={index} value={dept.name}>{dept.name}</option>
-                                ))}
+                                <option value="">Select your batch</option>
+                                <option value="Batch of 27">Batch of 27</option>
+                                <option value="Batch of 28">Batch of 28</option>
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="whyJoin" className="block text-sm font-medium text-e0e0e8 mb-1"> {/* Adjusted text color */}
-                                Why do you want to join the Executive Council? (Min 100 words)
+                            <label htmlFor="whyJoin" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                Why do you want to join our Executive Council? (Min 100 words)
                             </label>
                             <textarea
                                 id="whyJoin"
                                 name="whyJoin"
                                 rows="5"
-                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8" // Adjusted textarea styles for dark theme
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
                                 placeholder="Share your passion for community welfare and what you can bring to the team."
                                 required
                                 minLength="100"
                             ></textarea>
                         </div>
+                        <div>
+                            <label htmlFor="pastExperiences" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                Past experiences related to community/social welfare?
+                            </label>
+                            <textarea
+                                id="pastExperiences"
+                                name="pastExperiences"
+                                rows="5"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
+                                placeholder="Describe any relevant past experiences."
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label htmlFor="departmentPreference" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                Department Preference (1st Choice)
+                            </label>
+                            <select
+                                id="departmentPreference"
+                                name="departmentPreference"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
+                                required
+                            >
+                                <option value="">Select a Department</option>
+                                {departments.map((dept, index) => (
+                                    <option key={index} value={dept.name}>{dept.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="departmentPreference2" className="block text-sm font-medium text-e0e0e8 mb-1">
+                                Department Preference (2nd Choice, optional)
+                            </label>
+                            <select
+                                id="departmentPreference2"
+                                name="departmentPreference2"
+                                className="mt-1 block w-full px-4 py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8"
+                            >
+                                <option value="">Select a Department</option>
+                                {departments.map((dept, index) => (
+                                    <option key={index} value={dept.name}>{dept.name}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div className="flex items-center">
+                            <input
+                                type="checkbox"
+                                id="acknowledgement"
+                                name="acknowledgement"
+                                className="h-4 w-4 text-ff8dc7 rounded border-gray-600 focus:ring-ff8dc7 bg-252a42"
+                                required
+                            />
+                            <label htmlFor="acknowledgement" className="ml-2 block text-sm font-medium text-e0e0e8">
+                                I hereby acknowledge that I will not be part of any other society's Executive Council for this Academic term.
+                            </label>
+                        </div>
                         <button
                             type="submit"
-                            className="btn-cute w-full py-3 px-6 rounded-lg shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ff8dc7 focus:ring-offset-2 transition-colors duration-300" // Applied custom button style
+                            className="btn-cute w-full py-3 px-6 rounded-lg shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ff8dc7 focus:ring-offset-2 transition-colors duration-300"
                         >
                             Submit Application
                         </button>
