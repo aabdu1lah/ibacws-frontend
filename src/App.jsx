@@ -353,9 +353,9 @@ const App = () => {
                         Applications are now open for various departmental roles. Please review the FAQs (if applicable) for more information on eligibility, the application process, and what to expect. We encourage all interested students to apply!
                     </p>
                     <ul className="list-disc list-inside text-sm md:text-base text-c9c9d5 mt-4 space-y-2"> {/* Responsive text size */}
-                        <li><strong>Application Deadline:</strong> <span className="text-ffb1df">{isMT ? "September 7, 2025" : "August 31, 2025"}</span></li>
-                        <li><strong>Interview Period:</strong> <span className="text-a9e0ff">{isMT ? "TBD" : "August 31, 2025"}</span></li>
-                        <li><strong>Announcement of Results:</strong> <span className="text-f7e6af">{isMT ? "TBD" : "August 31, 2025"}</span></li>
+                        <li><strong>Application Deadline:</strong> <span className="text-ffb1df">{isMT ? "September 7, 2025" : "September 2, 2025"}</span></li>
+                        <li><strong>Interview Period:</strong> <span className="text-a9e0ff">{isMT ? "TBD" : "September 1 - September 2, 2025"}</span></li>
+                        <li><strong>Announcement of Results:</strong> <span className="text-f7e6af">{isMT ? "TBD" : "September 4, 2025"}</span></li>
                     </ul>
                 </div>
             </div>
