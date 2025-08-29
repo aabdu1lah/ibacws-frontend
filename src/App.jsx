@@ -6,6 +6,9 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState('home'); // 'home', 'signup' (for EC), or 'mtsignup' (for MT)
     const [showFaq, setShowFaq] = useState(null); // State to manage FAQ accordion
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+    const [isSubmitting, setIsSubmitting] = useState(false); // New state for submission status
+    const [submitMessage, setSubmitMessage] = useState(''); // New state for submission message
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -55,6 +58,58 @@ const App = () => {
         }
         setIsMobileMenuOpen(false); // Close the menu
     };
+
+    // --- Form Submission Handler ---
+    const handleFormSubmit = async (event, isMT) => {
+        event.preventDefault();
+        setIsSubmitting(true);
+        setSubmitMessage('');
+
+        const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+        const formData = new FormData(event.target);
+        const payload = {};
+
+        for (const [key, value] of formData.entries()) {
+            let cleanKey = key.startsWith('mt') ? key.slice(2) : key;
+            cleanKey = cleanKey.charAt(0).toLowerCase() + cleanKey.slice(1);
+
+            if (cleanKey === 'acknowledgement') {
+            payload[cleanKey] = value === 'on';
+            } else {
+            payload[cleanKey] = value;
+            }
+        }
+
+        payload['targetSheet'] = isMT ? 'MT Applications' : 'EC Applications';
+
+        try {
+            const response = await fetch(`${BACKEND_URL}/submit-form`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+            setSubmitMessage('Application submitted successfully! Thank you.');
+            event.target.reset();
+            } else {
+            console.error('Submission error:', result.message);
+            setSubmitMessage(`There was an error submitting your application: ${result.message}`);
+            }
+        } catch (error) {
+            console.error('Network or parsing error:', error);
+            setSubmitMessage('There was a network error. Please check your connection and try again.');
+        } finally {
+            setIsSubmitting(false);
+            setTimeout(() => setSubmitMessage(''), 5000);
+        }
+    };
+
 
     const departmentsSection = (
         <section id="departments" className="section-padding"> {/* Removed bg-cute-gradient */}
@@ -335,7 +390,7 @@ const App = () => {
                 <h2 className="text-xl md:text-3xl font-bold text-f0f0f8 mb-4 md:mb-6 flex items-center"> {/* Responsive text size & margin */}
                     <UserRoundCog className="w-6 h-6 md:w-7 md:h-7 mr-2 md:mr-3 text-yellow-400" /> Application Form
                 </h2>
-                <form className="space-y-4 md:space-y-6 card-cute p-6 md:p-8 shadow-md"> {/* Responsive spacing & padding */}
+                <form className="space-y-4 md:space-y-6 card-cute p-6 md:p-8 shadow-md" onSubmit={(e) => handleFormSubmit(e, isMT)}> {/* Responsive spacing & padding */}
                     <div>
                         <label htmlFor={isMT ? "mtFullName" : "fullName"} className="block text-sm font-medium text-e0e0e8 mb-1">
                             Full Name
@@ -372,6 +427,7 @@ const App = () => {
                             name={isMT ? "mtErp" : "erp"}
                             className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base" // Responsive padding & text size
                             placeholder="e.g., 30XXX"
+                            minLength={5}
                             required
                         />
                     </div>
@@ -440,7 +496,7 @@ const App = () => {
                     </div>
                     <div>
                         <label htmlFor={isMT ? "mtPastExperiences" : "pastExperiences"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            Past experiences related to community/social welfare?
+                            Share any past experiences related to community/social welfare.
                         </label>
                         <textarea
                             id={isMT ? "mtPastExperiences" : "pastExperiences"}
@@ -481,26 +537,34 @@ const App = () => {
                             ))}
                         </select>
                     </div>
-                    {!isMT && ( // Acknowledgment checkbox only for EC sign-up
-                        <div className="flex items-center">
-                            <input
-                                type="checkbox"
-                                id="acknowledgement"
-                                name="acknowledgement"
-                                className="h-4 w-4 text-ff8dc7 rounded border-gray-600 focus:ring-ff8dc7 bg-252a42"
-                                required
-                            />
-                            <label htmlFor="acknowledgement" className="ml-2 block text-sm font-medium text-e0e0e8">
-                                I hereby acknowledge that I will not be part of any other society's Executive Council for this Academic term.
-                            </label>
-                        </div>
-                    )}
+                    <div className="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="acknowledgement"
+                            name="acknowledgement"
+                            className="h-4 w-4 text-ff8dc7 rounded border-gray-600 focus:ring-ff8dc7 bg-252a42"
+                            required
+                        />
+                        <label htmlFor="acknowledgement" className="ml-2 block text-sm font-medium text-e0e0e8">
+                            {(
+                                !isMT 
+                                ? "I hereby acknowledge that I will not be part of any other society's Executive Council for this Academic term."
+                                : "I will make a sincere effort to contribute effectively and consistently throughout the Academic Term."
+                            )}
+                        </label>
+                    </div>
                     <button
                         type="submit"
                         className="btn-cute w-full py-2.5 px-6 md:py-3 md:px-6 rounded-lg shadow-md hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ff8dc7 focus:ring-offset-2 transition-colors duration-300 text-sm md:text-base" // Responsive padding & text size
+                        disabled={isSubmitting} // Disable button during submission
                     >
-                        Submit Application
+                        {isSubmitting ? 'Submitting...' : 'Submit Application'}
                     </button>
+                    {submitMessage && (
+                        <p className={`mt-4 text-center font-semibold ${submitMessage.includes('error') ? 'text-red-400' : 'text-green-400'}`}>
+                            {submitMessage}
+                        </p>
+                    )}
                 </form>
             </div>
         </>
