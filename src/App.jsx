@@ -48,6 +48,26 @@ const App = () => {
             question: "What is the time commitment?",
             answer: "The time commitment varies depending on the department and the ongoing projects. EC members are expected to dedicate a few hours per week, with increased involvement during major events. We strive to be flexible and understand academic commitments."
         },
+        {
+            question: "What is the role of a Management Team?",
+            answer: "Management Teams assist the Executive Council in their assigned departments with carrying out tasks and gaining hands-on experience while supporting society activities."
+        },
+        {
+            question: "Who can apply for the MT?",
+            answer: "All students of IBA who are interested in community welfare, volunteering, and learning about society work can apply."
+        },
+        {
+            question: "What are the benefits of being in the MT?",
+            answer: "You will contribute to meaningful welfare projects and sharpen your leadership/teamwork skills while building lasting connections within the IBA community."
+        },
+        {
+            question: "Is prior experience required to join the MT?",
+            answer: "No, MTs are designed for students with little or no prior experience. The goal is to help you learn and grow."
+        },
+        {
+            question: "Do we get to choose our department?",
+            answer: "Yes, applicants can mention their preferred department. Final placement depends on interest, skills, and the needs of CWS."
+        },
     ];
 
     const toggleFaq = (index) => {
@@ -360,28 +380,30 @@ const App = () => {
                 </div>
             </div>
 
-            {/* FAQs Section (Only for EC) */}
-            {!isMT && (
+            {/* FAQs Section */}
+            {(
                 <div className="mb-8 md:mb-12"> {/* Responsive margin */}
                     <h2 className="text-xl md:text-3xl font-bold text-f0f0f8 mb-4 md:mb-6 flex items-center"> {/* Responsive text size & margin */}
                         <BookUser className="w-6 h-6 md:w-7 md:h-7 mr-2 md:mr-3 text-pink-400" /> Frequently Asked Questions
                     </h2>
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
-                            <div key={index} className="card-cute overflow-hidden">
-                                <button
-                                    className="flex justify-between items-center w-full p-4 md:p-5 text-left text-base md:text-lg font-semibold text-f0f0f8 hover:bg-27284b transition-colors duration-200" // Responsive padding & text size
-                                    onClick={() => toggleFaq(index)}
-                                >
-                                    {faq.question}
-                                    <ChevronRight className={`w-5 h-5 transition-transform duration-200 ${showFaq === index ? 'rotate-90 text-a9e0ff' : 'text-b0b0bb'}`} />
-                                </button>
-                                {showFaq === index && (
-                                    <div className="p-4 md:p-5 pt-0 text-sm md:text-base text-c9c9d5"> {/* Responsive padding & text size */}
-                                        <p>{faq.answer}</p>
-                                    </div>
-                                )}
-                            </div>
+                            ((!isMT && index < 5) || (isMT && index > 4)) && (
+                                <div key={index} className="card-cute overflow-hidden">
+                                    <button
+                                        className="flex justify-between items-center w-full p-4 md:p-5 text-left text-base md:text-lg font-semibold text-f0f0f8 hover:bg-27284b transition-colors duration-200" // Responsive padding & text size
+                                        onClick={() => toggleFaq(index)}
+                                    >
+                                        {faq.question}
+                                        <ChevronRight className={`w-5 h-5 transition-transform duration-200 ${showFaq === index ? 'rotate-90 text-a9e0ff' : 'text-b0b0bb'}`} />
+                                    </button>
+                                    {showFaq === index && (
+                                        <div className="p-4 md:p-5 pt-0 text-sm md:text-base text-c9c9d5"> {/* Responsive padding & text size */}
+                                            <p>{faq.answer}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            )
                         ))}
                     </div>
                 </div>
