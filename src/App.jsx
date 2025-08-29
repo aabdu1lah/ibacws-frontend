@@ -500,8 +500,9 @@ const App = () => {
                             required
                         >
                             <option value="">Select your batch</option>
-                            <option value={isMT ? "Batch of 28" : "Batch of 27"}>{isMT ? "Batch of 28" : "Batch of 27"}</option>
-                            <option value={isMT ? "Batch of 29" : "Batch of 28"}>{isMT ? "Batch of 29" : "Batch of 28"}</option>
+                            <option value="Batch of 27">Batch of 27</option>
+                            <option value="Batch of 28">Batch of 28</option>
+                            {(isMT && <option value="Batch of 29">Batch of 29</option>)}
                         </select>
                     </div>
                     <div>
