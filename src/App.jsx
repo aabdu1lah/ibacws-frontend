@@ -631,7 +631,7 @@ const App = () => {
 
                         {/* Mobile Menu Panel - Add this section */}
                         {isMobileMenuOpen && (
-                            <div className="md:hidden absolute top-full left-0 w-full bg-[rgba(35,32,63,0.98)] backdrop-blur-none py-4 px-6 shadow-lg border-t border-[rgba(255,141,199,0.15)]">
+                            <div className="md:hidden absolute top-full left-0 w-full bg-[rgba(35,32,63,0.98)] backdrop-blur-none py-4 px-6 shadow-lg border-t border-[rgba(255,141,199,0.15)]  h-screen inset-0">
                                 <ul className="flex flex-col space-y-4">
                                     <li>
                                         <a href="#goals"
