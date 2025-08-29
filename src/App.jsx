@@ -571,9 +571,11 @@ const App = () => {
                             onChange={(e) => setSecondChoice(e.target.value)}
                         >
                             <option value="">Select a Department</option>
-                            {departments.map((dept, index) => (
+                            {departments
+                            .filter((dept) => dept.name !== firstChoice) // filter out selected 1st choice
+                            .map((dept, index) => (
                                 <option key={index} value={dept.name}>
-                                    {dept.name}
+                                {dept.name}
                                 </option>
                             ))}
                         </select>
