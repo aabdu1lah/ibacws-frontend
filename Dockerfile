@@ -1,9 +1,16 @@
 # Stage 1: Build React app with Vite
 FROM node:20-alpine AS build
 WORKDIR /app
+
+# Copy dependencies and .env
 COPY package*.json ./
+COPY .env ./
 RUN npm install
+
+# Copy source
 COPY . .
+
+# Build the app
 RUN npm run build   # This generates "dist" folder
 
 # Stage 2: Serve with Nginx
