@@ -649,7 +649,7 @@ const App = () => {
                                 <img
                                     src="/assets/favicon.svg"
                                     alt="IBA Community Welfare Society Logo"
-                                    className="h-8 w-auto invert dark:filter-none"
+                                    className="h-8 w-auto dark:filter-none"
                                 />
                                 <span className="text-base md:text-lg font-semibold text-f0f0f8">
                                     IBA Community Welfare Society
