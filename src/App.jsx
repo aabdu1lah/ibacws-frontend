@@ -439,11 +439,11 @@ const App = () => {
                             type="tel"
                             id={isMT ? "mtWhatsappNumber" : "whatsappNumber"}
                             name={isMT ? "mtWhatsappNumber" : "whatsappNumber"}
-                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base" // Responsive padding & text size
-                            placeholder="e.g., 923XX-XXXXXXX"
-                            pattern="^\+?\d{1,3}?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$" // Basic pattern for phone numbers
+                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base"
+                            placeholder="e.g., 923XXXXXXXXX"
+                            pattern="^923\d{9}$"
                             required
-                        />
+                            />
                     </div>
                     <div>
                         <label htmlFor={isMT ? "mtProgram" : "program"} className="block text-sm font-medium text-e0e0e8 mb-1">
