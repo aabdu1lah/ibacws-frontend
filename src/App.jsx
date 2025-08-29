@@ -392,82 +392,103 @@ const App = () => {
                 </h2>
                 <form className="space-y-4 md:space-y-6 card-cute p-6 md:p-8 shadow-md" onSubmit={(e) => handleFormSubmit(e, isMT)}> {/* Responsive spacing & padding */}
                     <div>
-                        <label htmlFor={isMT ? "mtFullName" : "fullName"} className="block text-sm font-medium text-e0e0e8 mb-1">
+                        <label
+                            htmlFor={isMT ? "mtFullName" : "fullName"}
+                            className="block text-sm font-medium text-e0e0e8 mb-1"
+                        >
                             Full Name
+                            <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
                         </label>
                         <input
                             type="text"
                             id={isMT ? "mtFullName" : "fullName"}
                             name={isMT ? "mtFullName" : "fullName"}
-                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base" // Responsive padding & text size
+                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base"
                             placeholder="John Doe"
                             required
                         />
                     </div>
                     <div>
-                        <label htmlFor={isMT ? "mtUniversityEmail" : "universityEmail"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            University Email
-                        </label>
-                        <input
-                            type="email"
-                            id={isMT ? "mtUniversityEmail" : "universityEmail"}
-                            name={isMT ? "mtUniversityEmail" : "universityEmail"}
-                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base" // Responsive padding & text size
-                            placeholder="yourname@khi.iba.edu.pk"
-                            required
-                        />
+                    <label
+                        htmlFor={isMT ? "mtUniversityEmail" : "universityEmail"}
+                        className="block text-sm font-medium text-e0e0e8 mb-1"
+                    >
+                        University Email
+                        <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
+                    </label>
+                    <input
+                        type="email"
+                        id={isMT ? "mtUniversityEmail" : "universityEmail"}
+                        name={isMT ? "mtUniversityEmail" : "universityEmail"}
+                        className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base"
+                        placeholder="yourname@khi.iba.edu.pk"
+                        required
+                    />
                     </div>
                     <div>
-                        <label htmlFor={isMT ? "mtErp" : "erp"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            ERP
-                        </label>
-                        <input
-                            type="text"
-                            id={isMT ? "mtErp" : "erp"}
-                            name={isMT ? "mtErp" : "erp"}
-                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base" // Responsive padding & text size
-                            placeholder="e.g., 30XXX"
-                            minLength={5}
-                            required
-                        />
+                    <label
+                        htmlFor={isMT ? "mtErp" : "erp"}
+                        className="block text-sm font-medium text-e0e0e8 mb-1"
+                    >
+                        ERP
+                        <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
+                    </label>
+                    <input
+                        type="text"
+                        id={isMT ? "mtErp" : "erp"}
+                        name={isMT ? "mtErp" : "erp"}
+                        className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base"
+                        placeholder="e.g., 30XXX"
+                        minLength={5}
+                        required
+                    />
                     </div>
                     <div>
-                        <label htmlFor={isMT ? "mtWhatsappNumber" : "whatsappNumber"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            Whatsapp Number
-                        </label>
-                        <input
-                            type="tel"
-                            id={isMT ? "mtWhatsappNumber" : "whatsappNumber"}
-                            name={isMT ? "mtWhatsappNumber" : "whatsappNumber"}
-                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base"
-                            placeholder="e.g., 923XXXXXXXXX"
-                            pattern="^923\d{9}$"
-                            required
-                            />
+                    <label
+                        htmlFor={isMT ? "mtWhatsappNumber" : "whatsappNumber"}
+                        className="block text-sm font-medium text-e0e0e8 mb-1"
+                    >
+                        Whatsapp Number
+                        <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
+                    </label>
+                    <input
+                        type="tel"
+                        id={isMT ? "mtWhatsappNumber" : "whatsappNumber"}
+                        name={isMT ? "mtWhatsappNumber" : "whatsappNumber"}
+                        className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base"
+                        placeholder="e.g., 923XXXXXXXXX"
+                        pattern="^923\d{9}$"
+                        required
+                    />
                     </div>
                     <div>
-                        <label htmlFor={isMT ? "mtProgram" : "program"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            Program
-                        </label>
-                        <select
-                            id={isMT ? "mtProgram" : "program"}
-                            name={isMT ? "mtProgram" : "program"}
-                            className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base" // Responsive padding & text size
-                            required
-                        >
-                            <option value="">Select your program</option>
-                            <option value="BBA">BBA</option>
-                            <option value="ACF">ACF</option>
-                            <option value="CS">CS</option>
-                            <option value="SS">SS</option>
-                            <option value="Math">Math</option>
-                            <option value="Econ">Econ</option>
-                            <option value="Eco Math">Eco Math</option>
-                        </select>
+                    <label
+                        htmlFor={isMT ? "mtProgram" : "program"}
+                        className="block text-sm font-medium text-e0e0e8 mb-1"
+                    >
+                        Program
+                        <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
+                    </label>
+                    <select
+                        id={isMT ? "mtProgram" : "program"}
+                        name={isMT ? "mtProgram" : "program"}
+                        className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base"
+                        required
+                    >
+                        <option value="">Select your program</option>
+                        <option value="BBA">BBA</option>
+                        <option value="ACF">ACF</option>
+                        <option value="CS">CS</option>
+                        <option value="SS">SS</option>
+                        <option value="Math">Math</option>
+                        <option value="Econ">Econ</option>
+                        <option value="Eco Math">Eco Math</option>
+                    </select>
                     </div>
                     <div>
                         <label htmlFor={isMT ? "mtBatch" : "batch"} className="block text-sm font-medium text-e0e0e8 mb-1">
                             Batch
+                            <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
                         </label>
                         <select
                             id={isMT ? "mtBatch" : "batch"}
@@ -483,6 +504,7 @@ const App = () => {
                     <div>
                         <label htmlFor={isMT ? "mtWhyJoin" : "whyJoin"} className="block text-sm font-medium text-e0e0e8 mb-1">
                             Why do you want to join {isMT ? "the Management Team" : "our Executive Council"}? (Min 100 words)
+                            <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
                         </label>
                         <textarea
                             id={isMT ? "mtWhyJoin" : "whyJoin"}
@@ -509,6 +531,7 @@ const App = () => {
                     <div>
                         <label htmlFor={isMT ? "mtDepartmentPreference" : "departmentPreference"} className="block text-sm font-medium text-e0e0e8 mb-1">
                             Department Preference (1st Choice)
+                            <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
                         </label>
                         <select
                             id={isMT ? "mtDepartmentPreference" : "departmentPreference"}
@@ -524,7 +547,7 @@ const App = () => {
                     </div>
                     <div>
                         <label htmlFor={isMT ? "mtDepartmentPreference2" : "departmentPreference2"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            Department Preference (2nd Choice, optional)
+                            Department Preference (2nd Choice)
                         </label>
                         <select
                             id={isMT ? "mtDepartmentPreference2" : "departmentPreference2"}
@@ -546,6 +569,7 @@ const App = () => {
                             required
                         />
                         <label htmlFor="acknowledgement" className="ml-2 block text-sm font-medium text-e0e0e8">
+                            <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
                             {(
                                 !isMT 
                                 ? "I hereby acknowledge that I will not be part of any other society's Executive Council for this Academic term."
