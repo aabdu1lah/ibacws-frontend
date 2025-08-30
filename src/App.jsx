@@ -506,7 +506,7 @@ const App = () => {
                     </div>
                     <div>
                         <label htmlFor={isMT ? "mtWhyJoin" : "whyJoin"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            Why do you want to join {isMT ? "the Management Team" : "our Executive Council"}? (Min 100 words)
+                            Why do you want to join {isMT ? "the Management Team" : "our Executive Council"}? (Min 100 characters)
                             <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
                         </label>
                         <textarea
