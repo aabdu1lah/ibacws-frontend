@@ -529,7 +529,7 @@ const App = () => {
                     </div>
                     <div>
                         <label htmlFor={isMT ? "mtWhyJoin" : "whyJoin"} className="block text-sm font-medium text-e0e0e8 mb-1">
-                            Why do you want to join {isMT ? "the Management Team" : "our Executive Council"}? (Min 100 characters)
+                            Why do you want to join {isMT ? "the Management Team" : "our Executive Council"}? (Min 20 Words)
                             <span className="text-red-500 ml-1">*</span> {/* Red asterisk */}
                         </label>
                         <textarea
@@ -539,7 +539,7 @@ const App = () => {
                             className="mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border border-gray-600 rounded-md shadow-sm focus:ring-ff8dc7 focus:border-ff8dc7 bg-252a42 text-e0e0e8 text-sm md:text-base" // Responsive padding & text size
                             placeholder={`Share your passion for community welfare and what you can bring to the ${isMT ? "team" : "Executive Council"}.`}
                             required
-                            minLength="100"
+                            minLength="20"
                         ></textarea>
                     </div>
                     <div>
