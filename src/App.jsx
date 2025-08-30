@@ -185,7 +185,7 @@ const App = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {/* Event Card 1 - Restored Content */}
                     <div className="card-cute overflow-hidden">
-                        <img src="/assets/blood_drive.webp" alt="Blood Drive" className="w-full h-40 md:h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/2a1a3e/ffb1df?text=Fallback"; }} />
+                        <img src="/src/assets/images/blood_drive.webp" alt="Blood Drive" className="w-full h-40 md:h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/2a1a3e/ffb1df?text=Fallback"; }} />
                         <div className="p-4 md:p-6">
                             <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">Blood Drive</h3>
                             <p className="text-sm md:text-base text-c9c9d5 mb-4">
@@ -199,7 +199,7 @@ const App = () => {
                     </div>
                     {/* Event Card 2 - Restored Content */}
                     <div className="card-cute overflow-hidden">
-                        <img src="/assets/medical_camp.webp" alt="Medical Camp" className="w-full h-40 md:h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/1a2e3a/a9e0ff?text=Fallback"; }} />
+                        <img src="/src/assets/images/medical_camp.webp" alt="Medical Camp" className="w-full h-40 md:h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/1a2e3a/a9e0ff?text=Fallback"; }} />
                         <div className="p-4 md:p-6">
                             <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">Medical Camp</h3>
                             <p className="text-sm md:text-base text-c9c9d5 mb-4">
@@ -213,7 +213,7 @@ const App = () => {
                     </div>
                     {/* Event Card 3 - Restored Content */}
                     <div className="card-cute overflow-hidden">
-                        <img src="/assets/mkm.webp" alt="Muskrahaton Ka Mela" className="w-full h-40 md:h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/3a2e1a/f7e6af?text=Fallback"; }} />
+                        <img src="/src/assets/images/mkm.webp" alt="Muskrahaton Ka Mela" className="w-full h-40 md:h-48 object-cover" onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/3a2e1a/f7e6af?text=Fallback"; }} />
                         <div className="p-4 md:p-6">
                             <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">Muskrahaton Ka Mela</h3>
                             <p className="text-sm md:text-base text-c9c9d5 mb-4">
@@ -637,7 +637,7 @@ const App = () => {
                             {/* Logo + Title */}
                             <div className="flex items-center space-x-2">
                                 <img
-                                    src="/assets/favicon.svg"
+                                    src="/src/assets/images/favicon.svg"
                                     alt="IBA Community Welfare Society Logo"
                                     className="h-8 w-auto dark:filter-none"
                                 />
