@@ -1,7 +1,7 @@
 import {Rocket, Target, Users} from "lucide-react";
 import React from "react";
 
-const goalsSection = (
+const Goals = (
     <section id="goals" className="section-padding"> {/* Changed: Added bg-cute-gradient */}
         <div className="container mx-auto px-6 text-center">
             <h2 className="heading-cute mb-6 animate-fadeIn text-2xl md:text-3xl">Our Goals &
@@ -37,4 +37,4 @@ const goalsSection = (
     </section>
 );
 
-export default goalsSection;
+export default Goals;

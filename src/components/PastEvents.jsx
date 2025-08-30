@@ -1,7 +1,7 @@
 import {CalendarDays} from "lucide-react";
 import React from "react";
 
-const pastEventsSection = (
+const PastEvents = (
     <section id="past-events" className="section-padding bg-cute-gradient">
         <div className="container mx-auto px-6 text-center">
             <h2 className="heading-cute mb-6 animate-fadeIn text-2xl md:text-3xl">Our Past Events</h2>
@@ -56,4 +56,4 @@ const pastEventsSection = (
     </section>
 );
 
-export default pastEventsSection;
+export default PastEvents;

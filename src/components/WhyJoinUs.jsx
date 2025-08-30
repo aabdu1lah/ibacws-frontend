@@ -1,6 +1,6 @@
 import React from "react";
 
-const whyJoinUsSection = (
+const WhyJoinUs = (
     <section id="why-join-us" className="section-padding bg-cute-gradient">
         <div className="container mx-auto px-6 text-center">
             <h2 className="heading-cute mb-6 animate-fadeIn text-2xl md:text-3xl">Why Join Us?</h2> {/* Responsive text size */}
@@ -31,4 +31,4 @@ const whyJoinUsSection = (
     </section>
 );
 
-export default whyJoinUsSection;
+export default WhyJoinUs;

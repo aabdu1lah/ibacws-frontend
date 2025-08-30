@@ -1,7 +1,7 @@
 import React from "react";
 import departments from "../constants/Departments.js";
 
-const departmentsSection = (
+const Departments = (
     <section id="departments" className="section-padding"> {/* Removed bg-cute-gradient */}
         <div className="container mx-auto px-6 text-center">
             <h2 className="heading-cute mb-6 animate-fadeIn text-2xl md:text-3xl">Our Departments</h2> {/* Responsive text size */}
@@ -23,4 +23,4 @@ const departmentsSection = (
     </section>
 );
 
-export default departmentsSection;
+export default Departments;
