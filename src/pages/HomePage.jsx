@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Goals from '../components/Goals';
-import PastEvents from '../components/PastEvents';
-import Departments from '../components/Departments';
-import WhyJoinUs from '../components/WhyJoinUs';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import Header from '../components/Header.jsx';
+import Hero from '../components/Hero.jsx';
+import Goals from '../components/Goals.jsx';
+import PastEvents from '../components/PastEvents.jsx';
+import Departments from '../components/Departments.jsx';
+import WhyJoinUs from '../components/WhyJoinUs.jsx';
+import Contact from '../components/Contact.jsx';
+import Footer from '../components/Footer.jsx';
 
 const HomePage = ({ setCurrentPage }) => {
     return (

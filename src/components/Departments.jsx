@@ -1,5 +1,5 @@
 import React from "react";
-import departments from "../constants/Departments.js";
+import departments from "../constants/departments.js";
 
 const Departments = (
     <section id="departments" className="section-padding"> {/* Removed bg-cute-gradient */}
