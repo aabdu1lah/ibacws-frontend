@@ -4,7 +4,7 @@ import Button from './ui/Button';
 import faqs from '../constants/faqs.js';
 import departments from '../constants/departments.js';
 
-const ApplicationForm = ({ isMT, setCurrentPage }) => {
+const ApplicationForm = ({ isMT }) => {
     const [firstChoice, setFirstChoice] = useState("");
     const [secondChoice, setSecondChoice] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
