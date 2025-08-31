@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import {images} from "../assets/assets.js";
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,7 +12,7 @@ const Header = () => {
                 {/* Logo + Title */}
                 <div className="flex items-center space-x-2">
                     <img
-                        src="/public/favicon.svg"
+                        src={images.favicon}
                         alt="IBA Community Welfare Society Logo"
                         className="h-8 w-auto dark:filter-none"
                     />
