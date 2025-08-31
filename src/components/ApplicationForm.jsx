@@ -26,7 +26,7 @@ const ApplicationForm = ({ isMT }) => {
     ));
 
     return (
-        <Card>
+        <Card className="p-6 md:p-8">
             <h2 className="text-xl md:text-3xl font-bold text-f0f0f8 mb-4 md:mb-6 flex items-center">
                 <UserRoundCog className="w-6 h-6 md:w-7 md:h-7 mr-2 md:mr-3 text-yellow-400" /> Application Form
             </h2>

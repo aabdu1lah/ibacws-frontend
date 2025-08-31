@@ -14,6 +14,7 @@ const Departments = () => {
                     {departments.map((dept, index) => (
                         <Card
                             key={index}
+                            className="p-6 md:p-8"
                         >
                             <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">{dept.name}</h3> {/* Responsive text size */}
                             <p className="text-sm md:text-base text-c9c9d5">{dept.description}</p> {/* Responsive text size */}

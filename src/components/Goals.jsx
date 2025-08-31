@@ -13,21 +13,21 @@ const Goals = () => {
                     various initiatives.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <Card> {/* Responsive padding */}
+                    <Card className="p-6 md:p-8"> {/* Responsive padding */}
                         <Target className="text-cyan-400 mb-4 mx-auto w-10 h-10 md:w-12 md:h-12" /> {/* Responsive icon size */}
                         <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">Empowerment</h3> {/* Responsive text size */}
                         <p className="text-sm md:text-base text-c9c9d5">
                             Empowering underprivileged communities through education and skill-building programs.
                         </p>
                     </Card>
-                    <Card> {/* Responsive padding */}
+                    <Card className="p-6 md:p-8"> {/* Responsive padding */}
                         <Users className="text-pink-400 mb-4 mx-auto w-10 h-10 md:w-12 md:h-12" /> {/* Responsive icon size */}
                         <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">Support</h3> {/* Responsive text size */}
                         <p className="text-sm md:text-base text-c9c9d5">
                             Providing essential aid and support to those in need, fostering a caring environment.
                         </p>
                     </Card>
-                    <Card> {/* Responsive padding */}
+                    <Card className="p-6 md:p-8"> {/* Responsive padding */}
                         <Rocket className="text-yellow-400 mb-4 mx-auto w-10 h-10 md:w-12 md:h-12" /> {/* Responsive icon size */}
                         <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">Awareness</h3> {/* Responsive text size */}
                         <p className="text-sm md:text-base text-c9c9d5">

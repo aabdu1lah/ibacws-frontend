@@ -17,7 +17,7 @@ const PastEvents = () => {
                         <div className="p-4 md:p-6">
                             <h3 className="text-lg md:text-xl font-semibold text-f0f0f8 mb-2">Blood Drive</h3>
                             <p className="text-sm md:text-base text-c9c9d5 mb-4">
-                                167 donors, 501 lives saved — doubling our impact through stronger outreach.
+                                267 donors, 501 lives saved — doubling our impact through stronger outreach.
                             </p>
                             <div className="flex items-center text-b0b0bb text-sm md:text-base">
                                 <CalendarDays className="w-4 h-4 mr-2 text-pink-400" />
