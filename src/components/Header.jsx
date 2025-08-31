@@ -11,7 +11,7 @@ const Header = () => {
                 {/* Logo + Title */}
                 <div className="flex items-center space-x-2">
                     <img
-                        src="/src/assets/images/favicon.svg"
+                        src="/public/favicon.svg"
                         alt="IBA Community Welfare Society Logo"
                         className="h-8 w-auto dark:filter-none"
                     />
