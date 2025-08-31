@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState} from 'react';
 import { BookUser } from 'lucide-react';
 import Accordion from './ui/Accordion';
 import faqs from '../constants/faqs';
@@ -6,16 +6,21 @@ import deadlines from '../constants/deadlines';
 import Card from "./ui/Card.jsx";
 
 const ApplicationInfo = ({ isMT }) => {
+    const [showFaq, setShowFaq] = useState(null); // <-- Add state here
     const formFaqs = faqs.filter(f => f.isMT === isMT);
     const currentDeadlines = isMT ? deadlines.mt : deadlines.ec;
+
+    const toggleFaq = (index) => {
+        setShowFaq(showFaq === index ? null : index);
+    };
 
     return (
         <>
             {/* Intro and Deadlines Section */}
             <div className="mb-8 md:mb-12">
-                <h2 className="text-xl md:text-3xl font-bold text-f0f0f8 mb-4 md:mb-6 flex items-center">
-                    <BookUser className="w-6 h-6 md:w-7 md:h-7 mr-2 md:mr-3 text-cyan-400" /> Application Details
-                </h2>
+                <h3 className="text-xl md:text-3xl font-bold text-f0f0f8 mb-4 md:mb-6 flex items-center">
+                    <BookUser className="w-6 h-6 md:w-7 md:h-7 mr-2 md:mr-3 text-cyan-400 " /> Application Details
+                </h3>
                 <Card className="p-6 md:p-8">
                     <p className="text-sm md:text-base text-c9c9d5 leading-relaxed mb-4">
                         {isMT
@@ -55,12 +60,18 @@ const ApplicationInfo = ({ isMT }) => {
 
             {/* FAQs Section */}
             <div className="mt-12">
-                <h3 className="text-xl font-semibold mb-4 text-f0f0f8 flex items-center">
+                <h3 className="text-xl md:text-3xl font-bold text-f0f0f8 mb-4 md:mb-6 flex items-center">
                     <BookUser className="w-6 h-6 md:w-7 md:h-7 mr-2 md:mr-3 text-pink-400"/> Frequently Asked Questions
                 </h3>
                 <div className="space-y-4">
                     {formFaqs.map((faq, index) => (
-                        <Accordion key={index} question={faq.question} answer={faq.answer}/>
+                        <Accordion
+                            key={index}
+                            question={faq.question}
+                            answer={faq.answer}
+                            isOpen={showFaq === index}
+                            toggleFaq={() => toggleFaq(index)}
+                        />
                     ))}
                 </div>
             </div>
