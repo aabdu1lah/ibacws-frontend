@@ -207,3 +207,29 @@ select:focus {
     border-color: #ff8dc7; /* Accent color for focus */
     box-shadow: 0 0 0 3px rgba(255, 141, 199, 0.3); /* Subtle glow on focus */
 }
+
+/* --- FORM STYLES --- */
+.form-group {
+    @apply space-y-1;
+}
+
+.form-input {
+    @apply mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border rounded-md shadow-sm text-sm md:text-base;
+    @apply bg-[#252a42] border-gray-600 text-[#e0e0e8];
+}
+
+.form-input:focus {
+    @apply ring-1 ring-[#ff8dc7] border-[#ff8dc7];
+}
+
+.form-textarea {
+    @apply mt-1 block w-full px-3 py-2 md:px-4 md:py-2 border rounded-md shadow-sm text-sm md:text-base;
+    @apply bg-[#252a42] border-gray-600 text-[#e0e0e8];
+    @apply ring-1 ring-[#ff8dc7] border-[#ff8dc7]; /* if you also want focus styles */
+}
+
+/* You can also add styles for the checkbox if you want to be more specific */
+.form-checkbox {
+    @apply h-4 w-4 rounded border-gray-600 focus:ring-[#ff8dc7] bg-[#252a42];
+    @apply text-[#ff8dc7];
+}

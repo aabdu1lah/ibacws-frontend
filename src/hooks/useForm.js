@@ -38,6 +38,7 @@ const useForm = (initialState) => {
         payload['targetSheet'] = isMT ? 'MT Applications' : 'EC Applications';
 
         try {
+            console.log("payload: ", payload);
             const response = await fetch(`${BACKEND_URL}/submit-form`, {
                 method: 'POST',
                 headers: {
@@ -60,7 +61,7 @@ const useForm = (initialState) => {
             setSubmitMessage('There was a network error. Please check your connection and try again.');
         } finally {
             setIsSubmitting(false);
-            setTimeout(() => setSubmitMessage(''), 5000);
+            setTimeout(() => setSubmitMessage(''), 50000);
         }
     }
 

@@ -14,7 +14,7 @@ const Contact = () => {
                 </p>
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
                     {currentChannels.map((channel, index) => (
-                        <Card className="px-2.5 py-1.5">
+                        <Card className="px-2.5 py-1.5" key={channel.name}>
                             <a
                                 key={index}
                                 href={channel.href}
