@@ -13,7 +13,10 @@ const useForm = (initialState) => {
         }));
     };
 
-    // --- Form Submission Handler ---
+    const resetForm = () => {
+        setFormData(initialState);
+    };
+
     const handleFormSubmit = async (event, isMT) => {
         event.preventDefault();
         setIsSubmitting(true);
@@ -51,6 +54,7 @@ const useForm = (initialState) => {
             if (result.success) {
                 setSubmitMessage('Application received! See you at the interviews :)');
                 event.target.reset();
+                resetForm();
             } else {
                 console.error('Submission error:', result.message);
                 setSubmitMessage(`There was an error submitting your application: ${result.message}`);
