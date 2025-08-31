@@ -193,7 +193,7 @@ const ApplicationForm = ({ isMT }) => {
                         {isSubmitting ? 'Submitting...' : 'Submit Application'}
                     </Button>
                     {submitMessage && (
-                        <p className={`mt-4 text-center font-semibold ${submitMessage.includes('successfully') ? 'text-green-400' : 'text-red-400'}`}>
+                        <p className={`mt-4 text-center font-semibold ${submitMessage.includes('error') ? 'text-red-400' : 'text-green-400'}`}>
                             {submitMessage}
                         </p>
                     )}

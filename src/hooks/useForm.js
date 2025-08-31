@@ -60,7 +60,7 @@ const useForm = (initialState) => {
             setSubmitMessage('There was a network error. Please check your connection and try again.');
         } finally {
             setIsSubmitting(false);
-            setTimeout(() => setSubmitMessage(''), 50000);
+            setTimeout(() => setSubmitMessage(''), 5000);
         }
     }
 
