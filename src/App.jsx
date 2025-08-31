@@ -1,35 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import HomePage from './pages/HomePage';
-import ECApplicationPage from './pages/ECApplicationPage';
-import MTApplicationPage from './pages/MTApplicationPage';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
+import HomePage from './pages/HomePage.jsx';
 import './assets/styles/main.css';
+import ApplicationFormPage from "./pages/ApplicationFormPage.jsx";
 
-// Main App Component
-const App = () => {
-    const [currentPage, setCurrentPage] = useState('home'); // 'home', 'signup', or 'mtsignup'
+const AppContent = () => {
+    const location = useLocation();
+    const isFormPage = location.pathname.startsWith('/form');
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [currentPage]);
-
-    // This component now acts as the main router for the application
-    const renderPage = () => {
-        switch (currentPage) {
-            case 'home':
-                return <HomePage setCurrentPage={setCurrentPage} />;
-            case 'signup':
-                return <ECApplicationPage setCurrentPage={setCurrentPage} />;
-            case 'mtsignup':
-                return <MTApplicationPage setCurrentPage={setCurrentPage} />;
-            default:
-                return <HomePage setCurrentPage={setCurrentPage} />;
-        }
-    };
+    }, [location.pathname]);
 
     return (
-        <div className="font-inter antialiased text-e0e0e8 bg-1a1a2e">
-            {renderPage()}
+        <div>
+            {!isFormPage && <Header />}
+            <main className="flex-grow">
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/form/ec" element={<ApplicationFormPage formType='EC' />} />
+                    <Route path="/form/mt" element={<ApplicationFormPage formType='MT' />} />
+                </Routes>
+            </main>
+            <Footer />
         </div>
+    );
+};
+
+// Main App component with BrowserRouter
+const App = () => {
+    return (
+        <BrowserRouter>
+            <AppContent />
+        </BrowserRouter>
     );
 };
 

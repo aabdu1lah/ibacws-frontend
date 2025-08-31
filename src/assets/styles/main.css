@@ -35,12 +35,12 @@ body {
 
 /* Button styling (accented for dark mode with logo colors) */
 .btn-cute {
-    @apply px-5 py-2 rounded-full font-semibold;
-    background: linear-gradient(135deg, #ff8dc7, #8ad9ff); /* Pink to soft blue/cyan */
-    color: #1a1a2e; /* Dark text on light button */
-    transition: all 0.3s ease; /* Ensure transitions are smooth */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Added subtle shadow for default state */
+    @apply px-5 py-2 rounded-full font-semibold text-black;
+    background: linear-gradient(135deg, #ff8dc7, #8ad9ff);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+
 .btn-cute:hover {
     background: linear-gradient(135deg, #ff70bb, #6cc7ff); /* Slightly more intense hover gradient */
     transform: scale(1.05);
@@ -133,7 +133,6 @@ body {
     position: relative; /* For the pseudo-element underline */
     transition: color 0.3s ease, transform 0.2s ease;
     text-shadow: 0 0px 0px transparent; /* Base for text shadow */
-    color: #e0e0e8; /* Default text color */
 }
 
 .navbar-cute ul li a:hover {

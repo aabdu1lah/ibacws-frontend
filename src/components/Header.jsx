@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const Header = ({ setCurrentPage }) => {
+const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
-        <header className="navbar-cute text-e0e0e8 py-2 px-4 fixed w-full z-20">
+        <header className="navbar-cute py-2.5 px-4 fixed w-full z-20">
             <nav className="container mx-auto flex justify-between items-center">
                 {/* Logo + Title */}
                 <div className="flex items-center space-x-2">
@@ -52,20 +53,20 @@ const Header = ({ setCurrentPage }) => {
                         </a>
                     </li>
                     <li>
-                        <button
-                            onClick={() => setCurrentPage("signup")}
-                            className="btn-cute py-1.5 px-3 text-sm"
+                        <Link
+                            to="/form/ec"
+                            className="btn-cute text-sm text-black"
                         >
                             EC Sign-up
-                        </button>
+                        </Link>
                     </li>
                     <li>
-                        <button
-                            onClick={() => setCurrentPage("mtsignup")}
-                            className="btn-cute py-1.5 px-3 text-sm"
+                        <Link
+                            to="/form/mt"
+                            className="btn-cute text-sm text-black"
                         >
                             MT Sign-up
-                        </button>
+                        </Link>
                     </li>
                 </ul>
 
@@ -120,27 +121,23 @@ const Header = ({ setCurrentPage }) => {
                                 Contact
                             </a>
                         </li>
-                        <li className="pt-2 border-t border-[rgba(255,141,199,0.15)]">
-                            <button
-                                onClick={() => {
-                                    setCurrentPage("signup");
-                                    setIsMobileMenuOpen(false);
-                                }}
-                                className="btn-cute w-full py-2 text-sm mb-2"
+                        <li className="pt-8 border-t border-[rgba(255,141,199,0.15)]">
+                            <Link
+                                to="/form/ec"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="btn-cute w-full py-2 text-black text-sm mb-2"
                             >
                                 EC Sign-up
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                onClick={() => {
-                                    setCurrentPage("mtsignup");
-                                    setIsMobileMenuOpen(false);
-                                }}
-                                className="btn-cute w-full py-2 text-sm"
+                            <Link
+                                to="/form/mt"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="btn-cute w-full py-2 text-black text-sm"
                             >
                                 MT Sign-up
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </div>

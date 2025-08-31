@@ -8,19 +8,18 @@ import WhyJoinUs from '../components/WhyJoinUs.jsx';
 import Contact from '../components/Contact.jsx';
 import Footer from '../components/Footer.jsx';
 
-const HomePage = ({ setCurrentPage }) => {
+// HomePage now just renders its content, without worrying about navigation state.
+const HomePage = () => {
     return (
         <>
-            <Header setCurrentPage={setCurrentPage} />
             <main className="flex-grow pt-14">
-                <Hero setCurrentPage={setCurrentPage} />
+                <Hero />
                 <Goals />
                 <PastEvents />
                 <Departments />
                 <WhyJoinUs />
                 <Contact />
             </main>
-            <Footer />
         </>
     );
 };
