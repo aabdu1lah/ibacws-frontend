@@ -1,5 +1,3 @@
-import departments from "./departments.js";
-
 const faqs = [
     {
         question: "What is the Executive Council?",

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import Card from "./Card.jsx";
 
 const Accordion = ({ question, answer }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="card-cute overflow-hidden">
+        <Card className="overflow-hidden">
             <button
                 className="flex justify-between items-center w-full p-4 md:p-5 text-left text-base md:text-lg font-semibold text-f0f0f8 hover:bg-27284b transition-colors duration-200"
                 onClick={() => setIsOpen(!isOpen)}
@@ -18,7 +19,7 @@ const Accordion = ({ question, answer }) => {
                     <p>{answer}</p>
                 </div>
             )}
-        </div>
+        </Card>
     );
 };
 

@@ -1,7 +1,9 @@
-import {Menu, X} from "lucide-react";
-import React from "react";
+import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
-const Header = ({ setCurrentPage, isMobileMenuOpen, setIsMobileMenuOpen, handleMobileMenuClick }) => {
+const Header = ({ setCurrentPage }) => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
     return (
         <header className="navbar-cute text-e0e0e8 py-2 px-4 fixed w-full z-20">
             <nav className="container mx-auto flex justify-between items-center">
@@ -13,8 +15,8 @@ const Header = ({ setCurrentPage, isMobileMenuOpen, setIsMobileMenuOpen, handleM
                         className="h-8 w-auto dark:filter-none"
                     />
                     <span className="text-base md:text-lg font-semibold text-f0f0f8">
-                                        IBA Community Welfare Society
-                                    </span>
+                        IBA Community Welfare Society
+                    </span>
                 </div>
 
                 {/* Desktop Links */}
@@ -78,49 +80,52 @@ const Header = ({ setCurrentPage, isMobileMenuOpen, setIsMobileMenuOpen, handleM
                 </div>
             </nav>
 
-            {/* Mobile Menu Panel - Add this section */}
+            {/* Mobile Menu Panel */}
             {isMobileMenuOpen && (
                 <div
                     className="md:hidden absolute top-full left-0 w-full bg-[rgba(35,32,63,0.98)] backdrop-blur-none py-4 px-6 shadow-lg border-t border-[rgba(255,141,199,0.15)]  h-screen inset-0">
                     <ul className="flex flex-col space-y-4">
                         <li>
                             <a href="#goals"
-                               onClick={() => handleMobileMenuClick()}
+                               onClick={() => setIsMobileMenuOpen(false)}
                                className="block py-2 hover:text-ffb1df transition-colors">
                                 Goals
                             </a>
                         </li>
                         <li>
                             <a href="#past-events"
-                               onClick={() => handleMobileMenuClick()}
+                               onClick={() => setIsMobileMenuOpen(false)}
                                className="block py-2 hover:text-ffb1df transition-colors">
                                 Events
                             </a>
                         </li>
                         <li>
                             <a href="#departments"
-                               onClick={() => handleMobileMenuClick()}
+                               onClick={() => setIsMobileMenuOpen(false)}
                                className="block py-2 hover:text-ffb1df transition-colors">
                                 Departments
                             </a>
                         </li>
                         <li>
                             <a href="#why-join-us"
-                               onClick={() => handleMobileMenuClick()}
+                               onClick={() => setIsMobileMenuOpen(false)}
                                className="block py-2 hover:text-ffb1df transition-colors">
                                 Why Join Us
                             </a>
                         </li>
                         <li>
                             <a href="#contact"
-                               onClick={() => handleMobileMenuClick()}
+                               onClick={() => setIsMobileMenuOpen(false)}
                                className="block py-2 hover:text-ffb1df transition-colors">
                                 Contact
                             </a>
                         </li>
                         <li className="pt-2 border-t border-[rgba(255,141,199,0.15)]">
                             <button
-                                onClick={() => handleMobileMenuClick(() => setCurrentPage("signup"))}
+                                onClick={() => {
+                                    setCurrentPage("signup");
+                                    setIsMobileMenuOpen(false);
+                                }}
                                 className="btn-cute w-full py-2 text-sm mb-2"
                             >
                                 EC Sign-up
@@ -128,7 +133,10 @@ const Header = ({ setCurrentPage, isMobileMenuOpen, setIsMobileMenuOpen, handleM
                         </li>
                         <li>
                             <button
-                                onClick={() => handleMobileMenuClick(() => setCurrentPage("mtsignup"))}
+                                onClick={() => {
+                                    setCurrentPage("mtsignup");
+                                    setIsMobileMenuOpen(false);
+                                }}
                                 className="btn-cute w-full py-2 text-sm"
                             >
                                 MT Sign-up
