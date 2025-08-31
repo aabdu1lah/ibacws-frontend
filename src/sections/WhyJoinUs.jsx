@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./ui/Card.jsx";
+import Card from "../components/ui/Card.jsx";
 
 const WhyJoinUs = () =>  {
     return (

@@ -1,6 +1,6 @@
 import {Rocket, Target, Users} from "lucide-react";
 import React from "react";
-import Card from "./ui/Card";
+import Card from "../components/ui/Card.jsx";
 
 const Goals = () => {
     return (

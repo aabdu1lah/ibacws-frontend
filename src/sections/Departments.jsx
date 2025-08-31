@@ -1,6 +1,6 @@
 import React from "react";
 import departments from "../constants/departments.js";
-import Card from "./ui/Card";
+import Card from "../components/ui/Card.jsx";
 
 const Departments = () => {
     return (

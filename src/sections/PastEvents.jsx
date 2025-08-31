@@ -1,6 +1,6 @@
 import {CalendarDays} from "lucide-react";
 import React from "react";
-import Card from "./ui/Card";
+import Card from "../components/ui/Card.jsx";
 
 const PastEvents = () => {
     return (

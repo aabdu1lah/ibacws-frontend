@@ -1,11 +1,11 @@
 import React from 'react';
 import Header from '../components/Header.jsx';
-import Hero from '../components/Hero.jsx';
-import Goals from '../components/Goals.jsx';
-import PastEvents from '../components/PastEvents.jsx';
-import Departments from '../components/Departments.jsx';
-import WhyJoinUs from '../components/WhyJoinUs.jsx';
-import Contact from '../components/Contact.jsx';
+import Hero from '../sections/Hero.jsx';
+import Goals from '../sections/Goals.jsx';
+import PastEvents from '../sections/PastEvents.jsx';
+import Departments from '../sections/Departments.jsx';
+import WhyJoinUs from '../sections/WhyJoinUs.jsx';
+import Contact from '../sections/Contact.jsx';
 import Footer from '../components/Footer.jsx';
 
 // HomePage now just renders its content, without worrying about navigation state.
