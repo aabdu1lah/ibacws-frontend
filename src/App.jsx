@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import HomePage from './pages/HomePage.jsx';
@@ -8,7 +8,7 @@ import ApplicationFormPage from "./pages/ApplicationFormPage.jsx";
 
 const AppContent = () => {
     const location = useLocation();
-    const isFormPage = location.pathname.startsWith('/form');
+    const isFormPage = location.pathname.startsWith('/forms');
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -20,8 +20,11 @@ const AppContent = () => {
             <main className="flex-grow">
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/form/ec" element={<ApplicationFormPage formType='EC' />} />
-                    <Route path="/form/mt" element={<ApplicationFormPage formType='MT' />} />
+                    {/* <Route path="/forms/ec" element={<ApplicationFormPage formType='EC' />} /> */}
+                    <Route path="/forms/mt" element={<ApplicationFormPage formType='MT' />} />
+                    
+                    {/* Catch-all redirect */}
+                    <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>
             <Footer />

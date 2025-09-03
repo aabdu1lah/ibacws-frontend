@@ -53,17 +53,17 @@ const Header = () => {
                             Contact
                         </a>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link
-                            to="/form/ec"
+                            to="/forms/ec"
                             className="btn-cute text-sm text-black"
                         >
                             EC Sign-up
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link
-                            to="/form/mt"
+                            to="/forms/mt"
                             className="btn-cute text-sm text-black"
                         >
                             MT Sign-up

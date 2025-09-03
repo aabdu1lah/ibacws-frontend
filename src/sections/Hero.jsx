@@ -29,15 +29,15 @@ const Hero = () => {
                     Building a better community, one initiative at a time.
                 </p>
                 <div className="flex flex-col space-y-4 items-center"> {/* Add this wrapper */}
-                    <Link
+                    {/* <Link
                         to="/form/ec"
                         className="btn-cute py-2 px-6 md:py-3 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105"
                     >
                         Join Our Executive Council! <ChevronRight className="inline-block ml-2 w-5 h-5"/>
-                    </Link>
+                    </Link> */}
 
                     <Link
-                        to="/form/mt"
+                        to="/forms/mt"
                         className="btn-cute py-2 px-6 md:py-3 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105"
                     >
                         Join Our Management Team! <ChevronRight className="inline-block ml-2 w-5 h-5"/>
