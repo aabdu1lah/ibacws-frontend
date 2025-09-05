@@ -19,6 +19,7 @@ const ApplicationForm = ({ isMT }) => {
         departmentPreference: '',
         departmentPreference2: '',
         acknowledgement: false,
+        team: isMT ? 'MT' : 'EC'
     });
 
     // Filter departments based on whether it's for MT or EC
