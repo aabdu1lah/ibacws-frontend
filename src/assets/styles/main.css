@@ -232,3 +232,62 @@ select:focus {
     @apply h-4 w-4 rounded border-gray-600 focus:ring-[#ff8dc7] bg-[#252a42];
     @apply text-[#ff8dc7];
 }
+
+/* --- ONBOARDING STYLES --- */
+.animate-slideInFromTop {
+     animation: slideInFromTop 0.8s ease-out forwards;
+ }
+.animate-slideInFromBottom {
+    animation: slideInFromBottom 0.8s ease-out forwards;
+}
+.animate-slide-in-from-bottom-delay {
+     animation: slideInFromBottom 1s ease-out forwards;
+     animation-delay: 0.5s;
+}
+.animate-slide-in-from-bottom-delay-2 {
+     animation: slideInFromBottom 1s ease-out forwards;
+     animation-delay: 1s;
+}
+.animate-bounce-in {
+     animation: bounceIn 0.8s ease-out forwards;
+}
+.animate-pulse-slow {
+     animation: pulse-slow 2s infinite ease-in-out;
+}
+.animate-fade-in-up {
+     animation: fadeInUp 1s ease-out forwards;
+}
+.animate-blob {
+     animation: blob 7s infinite;
+}
+.delay-500 {
+     animation-delay: 0.5s;
+}
+@keyframes slideInFromTop {
+     from { transform: translateY(-200px); opacity: 0; }
+     to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideInFromBottom {
+     from { transform: translateY(200px); opacity: 0; }
+     to { transform: translateY(0); opacity: 1; }
+}
+@keyframes bounceIn {
+     0% { transform: scale(0.3); opacity: 0; }
+     50% { transform: scale(1.1); opacity: 1; }
+     80% { transform: scale(0.9); }
+     100% { transform: scale(1); }
+}
+@keyframes pulse-slow {
+     0%, 100% { transform: scale(1); opacity: 1; }
+     50% { transform: scale(1.05); opacity: 0.8; }
+}
+@keyframes fadeInUp {
+     from { transform: translateY(20px); opacity: 0; }
+     to { transform: translateY(0); opacity: 1; }
+}
+@keyframes blob {
+     0% { transform: scale(1) translate(0px, 0px); }
+     33% { transform: scale(1.2) translate(30px, -50px); }
+     66% { transform: scale(0.9) translate(-20px, 20px); }
+     100% { transform: scale(1) translate(0px, 0px); }
+}
