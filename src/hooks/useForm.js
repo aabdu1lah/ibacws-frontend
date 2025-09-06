@@ -41,7 +41,7 @@ const useForm = (initialState) => {
         payload['targetSheet'] = isMT ? 'MT Applications' : 'EC Applications';
 
         try {
-            const response = await fetch(`${BACKEND_URL}/submit-form`, {
+            const response = await fetch(`${BACKEND_URL}/dashboard/submit-form`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
