@@ -27,7 +27,6 @@ const OnboardingPage = () => {
         quizPage,
         setQuizPage,
         preview,
-        downloaded,
         setDownloaded,
         uploading
     } = useOnboarding();
