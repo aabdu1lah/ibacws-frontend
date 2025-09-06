@@ -193,8 +193,9 @@ const OnboardingPage = () => {
                             <p className="text-lg md:text-xl mb-2 text-f0f0f8 opacity-0 animate-fade-in-up">
                                 You’ve been appointed as:
                             </p>
-                            <p className="text-2xl md:text-3xl font-bold text-ffb1df mb-4 opacity-0 animate-fade-in-up delay-500">
-                                {userInfo.position}
+                            <p className="text-2xl md:text-2xl font-bold mb-4 opacity-0 animate-fade-in-up delay-500
+                                        bg-gradient-to-r from-[#ff8dc7] via-[#ffb1df] to-[#ffd1a4] bg-clip-text text-transparent">
+                                {userInfo.position} {userInfo.position === 'Executive Council' && (' - ' + userInfo.department)}
                             </p>
 
                             {/* 👇 Add tagline here */}

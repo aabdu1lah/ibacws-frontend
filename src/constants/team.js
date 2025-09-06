@@ -35,55 +35,63 @@ export const members = [
         name: 'Asjal Inam',
         position: 'Executive Council ',
         tagline: 'If it moves, breaks, or disappears — Asjal’s already fixed it 📦',
-        secretKey: 'SECMAI'
+        secretKey: 'SECMAI',
+        department: 'Operations & Logistics'
     },
     {
         username: slugify('Areej Adil'),
         name: 'Areej Adil',
         position: 'Executive Council',
         tagline: 'Trends bow, timings bend — Areej makes the algorithm dance 🚀',
-        secretKey: 'MARKAA'
+        secretKey: 'MARKAA',
+        department: 'Marketing'
     },
     {
         username: slugify('Daniyal Haris'),
         name: 'Daniyal Haris',
         position: 'Executive Council',
         tagline: 'Behind every perfect shot and smooth cut, you’ll find Daniyal framing the story 🎥',
-        secretKey: 'MEDIDH'
+        secretKey: 'MEDIDH',
+        department: 'Media'
     },
     {
         username: slugify('Emaan Ali'),
         name: 'Emaan Ali',
         position: 'Executive Council',
         tagline: 'From lattes to leads to lifelines — Emaan unlocks it all ☕💸',
-        secretKey: 'CORPEA'
+        secretKey: 'CORPEA',
+        department: 'Corporate'
     },
     {
         username: slugify('Ayesha Jawad'),
         name: 'Ayesha Jawad',
         position: 'Executive Council',
         tagline: 'Ideas walk in plain — Ayesha sends them out legendary 🎨',
-        secretKey: 'CREAAJ'
+        secretKey: 'CREAAJ',
+        department: 'Creatives'
     },
     {
         username: slugify('Sohaib Sadiq'),
         name: 'Sohaib Sadiq',
         position: 'Executive Council',
         tagline: 'Crowds, chaos, or curveballs — Sohaib keeps it secure 🚨',
-        secretKey: 'SECUSS'
+        secretKey: 'SECUSS',
+        department: 'Security'
     },
     {
         username: slugify('Farah Waseem'),
         name: 'Farah Waseem',
         position: 'Executive Council',
         tagline: 'Guests don’t just arrive — Farah makes them feel at home before they walk in 🤝',
-        secretKey: 'GUREFW'
+        secretKey: 'GUREFW',
+        department: 'Guest Relations'
     },
     {
         username: slugify('Hania Emad'),
         name: 'Hania Emad',
         position: 'Executive Council',
         tagline: 'Budgets, balances, bottom lines — Hania’s already three steps ahead 💡',
-        secretKey: 'FINAHE'
+        secretKey: 'FINAHE',
+        department: 'Finance'
     }
 ];

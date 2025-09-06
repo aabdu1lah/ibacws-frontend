@@ -27,17 +27,19 @@ const Banner = ({
                 {/* Content layout */}
                 <div className="relative z-10 flex items-center h-full px-10 text-white gap-x-8">
                     {preview ? (
-                        <div className="w-36 h-36 rounded-full overflow-hidden border-4 border-white/30 shadow-lg flex-shrink-0">
+                        <div
+                            className="w-36 h-36 rounded-full overflow-hidden border-4 border-white/30 shadow-lg flex-shrink-0">
                             <img
                                 src={preview}
                                 alt={userInfo.name}
                                 className="w-full h-full object-cover"
                                 crossOrigin="anonymous"
-                                style={{ imageRendering: "auto" }}
+                                style={{imageRendering: "auto"}}
                             />
                         </div>
                     ) : (
-                        <div className="w-36 h-36 rounded-full bg-black flex items-center justify-center border-4 border-white/30 shadow-lg">
+                        <div
+                            className="w-36 h-36 rounded-full bg-black flex items-center justify-center border-4 border-white/30 shadow-lg">
                             <span className="text-2xl font-bold text-white">
                                 {getInitials(userInfo.name)}
                             </span>
@@ -46,13 +48,15 @@ const Banner = ({
 
                     <div className="flex flex-col justify-center max-w-md text-center md:text-left">
                         <h2 className="text-3xl font-bold mb-2">{userInfo.name}</h2>
-                        <p className="text-xl font-medium mb-2">
-                            {userInfo.position} | IBA CWS
+                        <p className="text-xl font-medium mb-2
+                                      bg-clip-text">
+                            {userInfo.position} {userInfo.position === 'Executive Council' && (' - ' + userInfo.department)} | IBA CWS
                         </p>
                         {userInfo.tagline && (
                             <p className="italic text-sm text-gray-200">{userInfo.tagline}</p>
                         )}
                     </div>
+
                 </div>
             </div>
 
@@ -63,7 +67,8 @@ const Banner = ({
                     onChange={handleFileChange}
                     className="hidden"
                 />
-                <span className="px-4 py-2 bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                <span
+                    className="px-4 py-2 bg-gray-800 text-white rounded-lg cursor-pointer hover:bg-gray-700 transition">
                     Choose Image
                 </span>
             </label>
