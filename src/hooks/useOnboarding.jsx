@@ -100,14 +100,18 @@ const useOnboarding = () => {
         }, 1000);
     };
 
-    // NEW: Handle profile picture upload
     const handleAccept = async () => {
-        if (!userInfo.uploadedFile) {
-            setStep("finished"); // proceed if no file
+        if (step === "banner") {
+            setStep("finished");
             return;
         }
 
-        setStep('finished')
+        if (!userInfo.uploadedFile) {
+            setStep("banner"); // proceed if no file
+            return;
+        }
+
+        setStep('banner')
     };
 
     const handleDecline = () => navigate("/");
