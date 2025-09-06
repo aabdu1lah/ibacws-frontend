@@ -18,7 +18,8 @@ const useOnboarding = () => {
     const [quizPage, setQuizPage] = useState(0);
     const [downloaded, setDownloaded] = useState(false);
     const [preview, setPreview] = useState(null);
-    const [uploading, setUploading] = useState(false);
+    const [uploading] = useState(false);
+    const [isAlreadyOnboarded, setIsAlreadyOnboarded] = useState(false);
 
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -45,15 +46,39 @@ const useOnboarding = () => {
 
     useEffect(() => {
         if (!member) return;
-        const memberInfo = members.find(
-            (m) => m.username?.toLowerCase() === member.toLowerCase()
-        );
-        if (memberInfo) {
-            setUserInfo(memberInfo);
-        } else {
-            navigate("/");
-        }
+
+        const fetchOnboardStatus = async () => {
+            try {
+                const memberInfo = members.find(
+                    (m) => m.username?.toLowerCase() === member.toLowerCase()
+                );
+
+                if (!memberInfo) {
+                    navigate("/");
+                    return;
+                }
+
+                setUserInfo(memberInfo);
+
+                // Check onboard status
+                const res = await fetch(`${BACKEND_URL}/user/onboard-status?username=${memberInfo.username}`);
+                const data = await res.json();
+
+                if (data.success && data.onboarded) {
+                    setIsAlreadyOnboarded(true);
+                    setStep("banner"); // skip all other steps
+                } else {
+                    setStep("intro");
+                }
+            } catch (err) {
+                console.error("Error fetching onboard status:", err);
+                setStep("error");
+            }
+        };
+
+        fetchOnboardStatus();
     }, [member, navigate]);
+
 
     useEffect(() => {
         if (step === "loading" && userInfo) {
@@ -101,19 +126,49 @@ const useOnboarding = () => {
     };
 
     const handleAccept = async () => {
+        if (isAlreadyOnboarded) {
+            // do nothing, they just interact with banner buttons
+            return;
+        }
+
         if (step === "banner") {
             setStep("finished");
             return;
         }
 
+        // for first-time onboarders
         if (!userInfo.uploadedFile) {
             setStep("banner"); // proceed if no file
             return;
         }
 
-        setStep('banner')
+        setStep('banner'); // proceed to banner
     };
 
+    const handleOnboarding = async () => {
+        if (!userInfo?.username) return;
+
+        try {
+            const response = await fetch(`${BACKEND_URL}/user/onboard-status`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username: userInfo.username }),
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                console.log("Onboard status updated!");
+                setStep("finished"); // move to finished/dashboard step
+            } else {
+                console.error("Failed to update onboard status:", data.message);
+            }
+        } catch (err) {
+            console.error("Error updating onboard status:", err);
+        }
+    };
     const handleDecline = () => navigate("/");
 
     return {
@@ -134,12 +189,14 @@ const useOnboarding = () => {
         handleDecline,
         handleFileChange,
         getInitials,
+        handleOnboarding,
         quizPage,
         setQuizPage,
         preview,
         downloaded,
         setDownloaded,
-        uploading
+        uploading,
+        isAlreadyOnboarded
     };
 };
 

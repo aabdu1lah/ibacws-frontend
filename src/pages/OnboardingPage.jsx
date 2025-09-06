@@ -5,6 +5,7 @@ import Card from "../components/ui/Card.jsx";
 import Button from "../components/ui/Button.jsx";
 import Banner from "../components/ui/Banner.jsx";
 import {useNavigate} from "react-router-dom";
+import Header from "../components/Header.jsx";
 
 const OnboardingPage = () => {
     const {
@@ -23,12 +24,14 @@ const OnboardingPage = () => {
         handleAccept,
         handleDecline,
         handleFileChange,
+        handleOnboarding,
         getInitials,
         quizPage,
         setQuizPage,
         preview,
         setDownloaded,
-        uploading
+        uploading,
+        isAlreadyOnboarded,
     } = useOnboarding();
 
     const navigate = useNavigate();
@@ -219,19 +222,6 @@ const OnboardingPage = () => {
                     </div>
                 );
 
-            case "banner":
-                return (
-                    <Banner
-                        userInfo={userInfo}
-                        handleFileChange={handleFileChange}
-                        getInitials={getInitials}
-                        preview={preview}
-                        setDownloaded={setDownloaded}
-                        handleAccept={handleAccept}
-                        uploading={uploading}
-                    />
-                );
-
             case 'error':
                 return <div className="text-center text-red-400">Something went wrong. Please check your URL and try
                     again.</div>;
@@ -259,9 +249,13 @@ const OnboardingPage = () => {
                             </p>
                         </div>
 
-
-                        <Button onClick={() => navigate("/dashboard")}
-                                className="bg-ff8dc7 text-black hover:bg-ffb1df transition-colors">
+                        <Button
+                            onClick={async () => {
+                                await handleOnboarding(); // update backend first
+                                navigate("/dashboard");
+                            }}
+                            className="bg-ff8dc7 text-black hover:bg-ffb1df transition-colors"
+                        >
                             Go to Dashboard
                         </Button>
                     </div>
@@ -274,18 +268,44 @@ const OnboardingPage = () => {
     };
 
     return (
-        <div
-            className="flex flex-col items-center justify-center min-h-screen relative bg-cute-gradient text-e0e0e8 font-inter overflow-hidden">
+        <div className="min-h-screen relative bg-cute-gradient text-e0e0e8 font-inter overflow-hidden flex flex-col">
+            {/* 👇 Header stays at the top, not centered */}
+            {isAlreadyOnboarded && (
+                <div className="z-20">
+                    <Header />
+                </div>
+            )}
+
+            {/* Background blobs */}
             <div className="absolute top-0 left-0 w-full h-full">
                 <div className="absolute top-1/4 left-1/4 w-32 h-32 md:w-48 md:h-48 bg-purple-500 opacity-20 rounded-full mix-blend-multiply filter blur-xl animate-blob"></div>
                 <div className="absolute top-1/2 right-1/4 w-48 h-48 md:w-64 md:h-64 bg-cyan-400 opacity-20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000"></div>
                 <div className="absolute bottom-1/4 left-1/2 w-40 h-40 md:w-56 md:h-56 bg-pink-700 opacity-20 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000"></div>
             </div>
-            <Card className="z-10 text-center max-w-4xl p-8 md:p-12 relative">
-                {renderContent()}
-            </Card>
+
+            {/* 👇 Centered card section */}
+            <div className="flex flex-1 items-center justify-center">
+                <Card className="z-10 text-center max-w-4xl p-8 md:p-12 relative">
+                    {step === "banner" ? (
+                        <Banner
+                            userInfo={userInfo}
+                            handleFileChange={handleFileChange}
+                            getInitials={getInitials}
+                            preview={preview}
+                            setDownloaded={setDownloaded}
+                            uploading={uploading}
+                            showContinue={!isAlreadyOnboarded}
+                            handleAccept={handleAccept}
+                        />
+                    ) : (
+                        renderContent()
+                    )}
+                </Card>
+            </div>
         </div>
     );
+
+
 };
 
 export default OnboardingPage;

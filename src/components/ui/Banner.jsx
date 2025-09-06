@@ -9,7 +9,7 @@ const Banner = ({
                     preview,
                     setDownloaded,
                     handleAccept,
-                    uploading
+                    showContinue = true
                 }) => {
     if (!userInfo) return null;
 
@@ -80,19 +80,11 @@ const Banner = ({
                     Download Banner
                 </Button>
 
-                <Button
+                {showContinue && (<Button
                     onClick={handleAccept}
-                    disabled={uploading} // disable while uploading
                 >
-                    {uploading ? (
-                        <div className="flex items-center gap-2">
-                            <span className="loader w-4 h-4 border-2 border-t-white border-r-white rounded-full animate-spin"></span>
-                            Uploading...
-                        </div>
-                    ) : (
-                        "Continue"
-                    )}
-                </Button>
+                    Continue
+                </Button>)}
             </div>
         </div>
     );
