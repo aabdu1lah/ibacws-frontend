@@ -4,7 +4,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-const Login = () => {
+const LoginPage = () => {
     const { login } = useAuth();
     const navigate = useNavigate(); // Initialize the hook
     const [username, setUsername] = useState('');
@@ -75,4 +75,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default LoginPage;

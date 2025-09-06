@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import SignupTable from '../components/SignupTable';
 
-const Dashboard = () => {
+const DashboardPage = () => {
     const { token, isLoggedIn, logout } = useAuth();
     const [signups, setSignups] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -106,4 +106,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default DashboardPage;

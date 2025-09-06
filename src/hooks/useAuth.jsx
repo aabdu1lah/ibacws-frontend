@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
         }
     }, [refreshToken, BACKEND_URL]);
 
-    // Login function
+    // LoginPage function
     const login = async (username, password) => {
         try {
             const response = await fetch(`${BACKEND_URL}/auth/login`, {

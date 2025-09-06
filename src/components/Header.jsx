@@ -34,6 +34,11 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/our-team" className="text-sm md:text-base hover:text-ffb1df transition-colors">
+                            Our Team
+                        </Link>
+                    </li>
+                    <li>
                         {isLoggedIn ? (
                             isDashboardPage ? (
                                 <button onClick={logout} className="btn-cute py-1.5 px-3 text-sm text-black">
@@ -69,23 +74,32 @@ const Header = () => {
                     className="md:hidden absolute top-full left-0 w-full bg-[rgba(35,32,63,0.98)] backdrop-blur-none py-4 px-6 shadow-lg border-t border-[rgba(255,141,199,0.15)] h-screen inset-0">
                     <ul className="flex flex-col space-y-4">
                         <li>
-                            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="block py-2 hover:text-ffb1df transition-colors">
+                            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}
+                                  className="block py-2 hover:text-ffb1df transition-colors">
                                 Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/our-team" onClick={() => setIsMobileMenuOpen(false)}
+                                  className="block py-2 hover:text-ffb1df transition-colors">
+                                Our Team
                             </Link>
                         </li>
                         <li>
                             {isLoggedIn ? (
                                 isDashboardPage ? (
-                                    <button onClick={logout} className="btn-cute w-full py-2 text-sm">
+                                    <button onClick={logout} className="btn-cute w-full py-4 text-sm">
                                         Logout
                                     </button>
                                 ) : (
-                                    <Link to="/dashboard" onClick={() => setIsMobileMenuOpen(false)} className="btn-cute w-full py-2 text-sm">
+                                    <Link to="/dashboard" onClick={() => setIsMobileMenuOpen(false)}
+                                          className="btn-cute w-full py-4 text-sm">
                                         Dashboard
                                     </Link>
                                 )
                             ) : (
-                                <Link to="/dashboard/login" onClick={() => setIsMobileMenuOpen(false)} className="btn-cute w-full py-2 text-sm">
+                                <Link to="/dashboard/login" onClick={() => setIsMobileMenuOpen(false)}
+                                      className="btn-cute w-full py-4 text-sm">
                                     Login
                                 </Link>
                             )}

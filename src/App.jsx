@@ -4,9 +4,10 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import HomePage from './pages/HomePage.jsx';
 import ApplicationFormPage from './pages/ApplicationFormPage.jsx';
-import Login from './pages/Login.jsx';
-import Dashboard from './pages/Dashboard.jsx';
+import LoginPage from './pages/LoginPage.jsx';
+import DashboardPage from './pages/DashboardPage.jsx';
 import { AuthProvider } from './hooks/useAuth.jsx';
+import OurTeamPage from './pages/OurTeamPage.jsx';
 import './assets/styles/main.css';
 
 const AppContent = () => {
@@ -40,8 +41,9 @@ const AppContent = () => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/forms/ec" element={<ApplicationFormPage formType="EC" />} />
                     <Route path="/forms/mt" element={<ApplicationFormPage formType="MT" />} />
-                    <Route path="/dashboard/login" element={<Login />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/dashboard/login" element={<LoginPage />} />
+                    <Route path="/dashboard" element={<DashboardPage />} />
+                    <Route path="/our-team" element={<OurTeamPage />} />
                     {/* Catch-all redirect */}
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
