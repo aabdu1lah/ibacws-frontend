@@ -53,6 +53,13 @@ body {
     background: linear-gradient(135deg, #ff70bb, #6cc7ff);
 }
 
+/* Selected state */
+.btn-selected {
+  background: #252a42 !important; /* Dark background */
+  color: #ff8dc7 !important;      /* Accent text */
+  border: 1px solid #ff8dc7;
+}
+
 /* Section padding (no change needed here) */
 .section-padding {
     @apply py-16 px-6 md:px-12;

@@ -1,62 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth.jsx';
 import { Navigate } from 'react-router-dom';
 import Card from '../components/ui/Card';
 import SignupTable from '../components/SignupTable';
+import { useSignups } from "../hooks/useSignups";
+import Button from '../components/ui/Button.jsx';
+
 
 const DashboardPage = () => {
-    const { token, isLoggedIn, logout } = useAuth();
-    const [signups, setSignups] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
-    const [signupType, setSignupType] = useState('MT');
-
-    useEffect(() => {
-        const fetchSignups = async () => {
-            if (!isLoggedIn) {
-                return;
-            }
-            const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-
-            try {
-                const response = await fetch(`${BACKEND_URL}/dashboard/signups/${signupType.toUpperCase()}`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`,
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                if (!response.ok) {
-                    const errorText = await response.text();
-                    let errorMessage;
-
-                    try {
-                        const errorData = JSON.parse(errorText);
-                        errorMessage = errorData.message;
-                    } catch (e) {
-                        errorMessage = errorText;
-                    }
-
-                    if (response.status === 401 || response.status === 403) {
-                        logout();
-                        return;
-                    }
-
-                    throw new Error(errorMessage || 'Failed to fetch signups');
-                }
-
-                const data = await response.json();
-                setSignups(data.data);
-            } catch (err) {
-                setError(err.message);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchSignups();
-    }, [isLoggedIn, token, logout, signupType]);
+    const [signupType, setSignupType] = useState("MT");
+    const { signups, loading, error, updateSignup } = useSignups(signupType);
+    const { isLoggedIn } = useAuth();
 
     if (!isLoggedIn) {
         return <Navigate to="/dashboard/login" />;
@@ -71,35 +25,29 @@ const DashboardPage = () => {
 
                 <div className="flex justify-center space-x-4 mb-6">
                     <Card>
-                        <button
+                        <Button
                             onClick={() => setSignupType('MT')}
-                            className={`py-2 px-4 rounded-lg font-medium transition-colors duration-200 ${
-                                signupType === 'MT'
-                                    ? 'bg-252a42 text-ff8dc7 border border-ff8dc7'
-                                    : 'bg-ff8dc7 text-252a42 shadow-lg'
-                            }`}
+                            className={signupType === 'MT' ? 'btn-selected' : 'btn-cute'}
                         >
                             MT Signups
-                        </button>
+                        </Button>
                     </Card>
                     <Card>
-                        <button
+                        <Button
                             onClick={() => setSignupType('EC')}
-                            className={`py-2 px-4 rounded-lg font-medium transition-colors duration-200 ${
-                                signupType === 'EC'
-                                    ? 'bg-252a42 text-ff8dc7 border border-ff8dc7'
-                                    : 'bg-ff8dc7 text-252a42 shadow-lg'
-                            }`}
+                            className={signupType === 'MT' ? 'btn-cute' : 'btn-selected'}
                         >
                             EC Signups
-                        </button>
+                        </Button>
                     </Card>
                 </div>
 
                 <Card className="p-4 md:p-6">
-                    {loading && <p className="text-center text-e0e0e8">Loading signups...</p>}
+                    {loading && <p className="text-center text-e0e0e8">Loading...</p>}
                     {error && <p className="text-center text-red-400">Error: {error}</p>}
-                    {!loading && !error && <SignupTable data={signups} signupType={signupType} />}
+                    {!loading && !error && (
+                    <SignupTable data={signups} onUpdateApplicant={updateSignup} />
+                    )}
                 </Card>
             </div>
         </main>
