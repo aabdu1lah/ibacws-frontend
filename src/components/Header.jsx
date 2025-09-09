@@ -39,7 +39,7 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
-                        {isLoggedIn ? (
+                        {isLoggedIn && (
                             isDashboardPage ? (
                                 <button onClick={logout} className="btn-cute py-1.5 px-3 text-sm text-black">
                                     Logout
@@ -49,10 +49,6 @@ const Header = () => {
                                     Dashboard
                                 </Link>
                             )
-                        ) : (
-                            <Link to="/dashboard/login" className="btn-cute py-1.5 px-3 text-sm text-black">
-                                Login
-                            </Link>
                         )}
                     </li>
                 </ul>
@@ -86,7 +82,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            {isLoggedIn ? (
+                            {isLoggedIn && (
                                 isDashboardPage ? (
                                     <button onClick={logout} className="btn-cute w-full py-4 text-sm">
                                         Logout
@@ -97,11 +93,6 @@ const Header = () => {
                                         Dashboard
                                     </Link>
                                 )
-                            ) : (
-                                <Link to="/dashboard/login" onClick={() => setIsMobileMenuOpen(false)}
-                                      className="btn-cute w-full py-4 text-sm">
-                                    Login
-                                </Link>
                             )}
                         </li>
                     </ul>

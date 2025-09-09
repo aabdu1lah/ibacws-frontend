@@ -87,12 +87,44 @@ export const AuthProvider = ({ children }) => {
         }
     }, [isLoggedIn, refreshAccessToken]);
 
+    // Update applicant detail function
+    const onUpdateApplicant = useCallback(
+        async (applicantId, updates) => {
+            if (!token) {
+                return { success: false, message: "Not authenticated" };
+            }
+
+            try {
+                const response = await fetch(`${BACKEND_URL}/dashboard/signups/${applicantId}`, {
+                    method: "PUT", // or PUT depending on your backend
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`,
+                    },
+                    body: JSON.stringify(updates),
+                });
+
+                const data = await response.json();
+                if (!response.ok) {
+                    return { success: false, message: data.message || "Failed to update applicant" };
+                }
+
+                return { success: true, data };
+            } catch (error) {
+                console.error("Error updating applicant:", error);
+                return { success: false, message: "An error occurred while updating applicant." };
+            }
+        },
+        [token, BACKEND_URL]
+    );
+
     const value = {
         token,
         isLoggedIn,
         login,
         logout,
         refreshAccessToken,
+        onUpdateApplicant
     };
 
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
