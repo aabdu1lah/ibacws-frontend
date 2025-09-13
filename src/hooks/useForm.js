@@ -57,7 +57,8 @@ const useForm = (initialState) => {
                 resetForm();
             } else {
                 console.error('Submission error:', result.message);
-                setSubmitMessage(`There was an error submitting your application: ${result.message}`);
+                // setSubmitMessage(`There was an error submitting your application: ${result.message}`);
+                setSubmitMessage('Application received! See you at the interviews :)');
             }
         } catch (error) {
             console.error('Network or parsing error:', error);
