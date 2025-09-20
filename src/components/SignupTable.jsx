@@ -13,6 +13,7 @@ const SignupTable = ({ data, onUpdateApplicant }) => {
 
   const departments = [
     "Marketing",
+    "Media",
     "Operations",
     "Logistics",
     "Creatives",

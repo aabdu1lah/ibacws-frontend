@@ -36,12 +36,12 @@ const Hero = () => {
                         Join Our Executive Council! <ChevronRight className="inline-block ml-2 w-5 h-5"/>
                     </Link> */}
 
-                    <Link
+                    {/* <Link
                         to="/forms/mt"
                         className="btn-cute py-2 px-6 md:py-3 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105"
                     >
                         Join Our Management Team! <ChevronRight className="inline-block ml-2 w-5 h-5"/>
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </section>
