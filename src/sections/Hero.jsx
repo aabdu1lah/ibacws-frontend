@@ -42,6 +42,13 @@ const Hero = () => {
                     >
                         Join Our Management Team! <ChevronRight className="inline-block ml-2 w-5 h-5"/>
                     </Link> */}
+
+                    <Link
+                        to="/forms/medical-camp"
+                        className="btn-cute py-2 px-6 md:py-3 md:px-8 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105"
+                    >
+                        Register for Medical Camp! <ChevronRight className="inline-block ml-2 w-5 h-5"/>
+                    </Link>
                 </div>
             </div>
         </section>

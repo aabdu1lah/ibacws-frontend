@@ -4,6 +4,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import HomePage from './pages/HomePage.jsx';
 import ApplicationFormPage from './pages/ApplicationFormPage.jsx';
+import MedicalCampFormPage from './pages/MedicalCampFormPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import DashboardPage from './pages/DashboardPage.jsx';
 import { AuthProvider } from './hooks/useAuth.jsx';
@@ -43,6 +44,7 @@ const AppContent = () => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/forms/ec" element={<ApplicationFormPage formType="EC" />} />
                     <Route path="/forms/mt" element={<ApplicationFormPage formType="MT" />} />
+                    <Route path="/forms/medical-camp" element={<MedicalCampFormPage />} />
                     <Route path="/dashboard/login" element={<LoginPage />} />
                     <Route path="/dashboard" element={<DashboardPage />} />
                     <Route path="/our-team" element={<OurTeamPage />} />
