@@ -29,7 +29,7 @@ const OurTeamPage = () => {
     const patron = {
         role: 'Patron',
         name: 'Dr. Salman Khalid',
-        title: 'Assistant Professor Economics',
+        title: 'Patron',
         img: images.drsalman,
     };
 

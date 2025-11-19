@@ -16,7 +16,7 @@ export const useMedicalCampSignups = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `${BACKEND_URL}/api/dashboard/medical-camp-signups`,
+        `${BACKEND_URL}/dashboard/medical-camp-signups`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -54,7 +54,7 @@ export const useMedicalCampSignups = () => {
 
     try {
       const response = await fetch(
-        `${BACKEND_URL}/api/dashboard/medical-camp-signups/${id}`,
+        `${BACKEND_URL}/dashboard/medical-camp-signups/${id}`,
         {
           method: "PUT",
           headers: {
