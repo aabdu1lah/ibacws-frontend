@@ -76,7 +76,6 @@ const MedicalCampForm = () => {
                 setIsCwsMember(false);
             } else {
                 console.error('Submission error:', result.message);
-                console.log(result);
                 // Show specific error message from backend, or default message
                 setSubmitMessage(result.message || 'There was an error submitting your registration. Please try again.');
             }
@@ -182,7 +181,7 @@ const MedicalCampForm = () => {
                     </div>
 
                     <div className="space-y-1">
-                        <label htmlFor="briefDescription" className="block text-sm font-medium text-e0e0e8">Brief Description About Yourself</label>
+                        <label htmlFor="briefDescription" className="block text-sm font-medium text-e0e0e8">Brief Description About Yourself<span className="text-red-500 ml-1">*</span></label>
                         <textarea
                             id="briefDescription"
                             name="briefDescription"
@@ -353,7 +352,7 @@ const MedicalCampForm = () => {
                         {isSubmitting ? 'Submitting...' : 'Submit Registration'}
                     </Button>
                     {submitMessage && (
-                        <p className={`mt-4 text-center font-semibold ${submitMessage.includes('error') ? 'text-red-400' : 'text-green-400'}`}>
+                        <p className={`mt-4 text-center font-semibold ${submitMessage.includes('error') || submitMessage.includes('registered') ? 'text-red-400' : 'text-green-400'}`}>
                             {submitMessage}
                         </p>
                     )}
