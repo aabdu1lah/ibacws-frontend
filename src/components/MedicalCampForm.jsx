@@ -76,6 +76,7 @@ const MedicalCampForm = () => {
                 setIsCwsMember(false);
             } else {
                 console.error('Submission error:', result.message);
+                console.log(result);
                 // Show specific error message from backend, or default message
                 setSubmitMessage(result.message || 'There was an error submitting your registration. Please try again.');
             }
