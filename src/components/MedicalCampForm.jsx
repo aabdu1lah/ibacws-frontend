@@ -60,7 +60,7 @@ const MedicalCampForm = () => {
         }
 
         try {
-            const response = await fetch(`${BACKEND_URL}/api/dashboard/submit-medical-camp-form`, {
+            const response = await fetch(`${BACKEND_URL}/dashboard/submit-medical-camp-form`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
